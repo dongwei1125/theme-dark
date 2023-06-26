@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docs</title>
+
+  <script src="https://unpkg.com/vue@2.5.17/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue3-sfc-loader@0.8.4/dist/vue2-sfc-loader.js"></script>
+  <script src="https://unpkg.com/element-ui@2.15.13/lib/index.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.13/lib/theme-chalk/index.css">
+  <link rel="stylesheet" href="https://unpkg.com/element-theme-darker/lib/index.color.css">
+
+  <style>
+    body {
+      --border-color: #dcdfe6;
+      --bg-color: #ffffff;
+      --el-text-color: #606266;
+    }
+
+    body.dark {
+      --border-color: #4c4d4f;
+      --bg-color: #141414;
+      --el-text-color: #cfd3dc;
+      --text-color: #e5eaf3;
+    }
+
+    body {
+      min-width: 350px;
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.2s;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--el-text-color);
+    }
+
+    .example {
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+
+    .el-row {
+      margin-bottom: 24px;
+    }
+
+    .el-row:last-child {
+      margin-bottom: 0;
+    }
+
+    body::-webkit-scrollbar {
+      width: 6px
+    }
+
+    body::-webkit-scrollbar:horizontal {
+      height: 6px
+    }
+
+    body::-webkit-scrollbar-track {
+      border-radius: 10px
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #0003;
+      border-radius: 10px;
+      transition: all .2s ease-in-out
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+      cursor: pointer;
+      background-color: #0000004d
+    }
+
+    body.dark::-webkit-scrollbar-thumb {
+      background-color: #fff3
+    }
+
+    body.dark::-webkit-scrollbar-thumb:hover {
+      background-color: #fff6
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <Index />
+  </div>
+
+  <script type="module">
+    const { loadModule } = window['vue2-sfc-loader']
+
+    const options = {
+      moduleCache: {
+        vue: Vue,
+      },
+      async getFile(url) {
+        const res = await fetch(url)
+
+        if (!res.ok) throw Object.assign(new Error(res.statusText + ' ' + url), { res })
+
+        return {
+          getContentData: asBinary => (asBinary ? res.arrayBuffer() : res.text()),
+        }
+      },
+      addStyle(textContent) {
+        const style = Object.assign(document.createElement('style'), { textContent })
+        const ref = document.head.getElementsByTagName('style')[0] || null
+
+        document.head.insertBefore(style, ref)
+      },
+    }
+
+    loadModule('./index.vue', options)
+      .then(component => new Vue(component).$mount('#app'))
+  </script>
+</body>
+
+</html>
