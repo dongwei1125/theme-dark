@@ -6,7 +6,7 @@
 @include b(tree) {
   position: relative;
   cursor: default;
-  background: $--color-white;
+  background: transparent;
   color: $--tree-font-color;
 
   @include e(empty-block) {
@@ -124,5 +124,5 @@
 }
 
 .el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content {
-  background-color: mix($--color-white, $--color-primary, 92%);
+  background-color: mix($--color-dark, $--color-primary, 90%);
 }

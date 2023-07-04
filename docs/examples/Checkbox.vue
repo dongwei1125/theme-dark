@@ -26,6 +26,8 @@
 
       <el-row>
         <el-checkbox label="d" border>复选框 A</el-checkbox>
+        <el-checkbox label="b" border>复选框 B</el-checkbox>
+        <el-checkbox label="c" disabled border>禁用 C</el-checkbox>
       </el-row>
     </div>
   </div>
@@ -36,7 +38,7 @@ export default {
   name: 'Checkbox',
   data() {
     return {
-      checkList: ['a', 'd'],
+      checkList: ['a', 'c'],
       indeterminate: true,
     }
   },

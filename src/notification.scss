@@ -9,7 +9,7 @@
   box-sizing: border-box;
   border: 1px solid $--notification-border-color;
   position: fixed;
-  background-color: $--color-white;
+  background-color: $--background-color-overlay;
   box-shadow: $--notification-shadow;
   transition: opacity .3s, transform .3s, left .3s, right .3s, top 0.4s, bottom .3s;
   overflow: hidden;

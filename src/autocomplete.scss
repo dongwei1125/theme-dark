@@ -16,7 +16,7 @@
   border-radius: $--border-radius-base;
   border: 1px solid $--border-color-light;
   box-sizing: border-box;
-  background-color: $--color-white;
+  background-color: $--background-color-overlay;
 
   @include e(wrap) {
     max-height: 280px;
@@ -65,11 +65,11 @@
       height: 100px;
       line-height: 100px;
       font-size: 20px;
-      color: #999;
+      color: $--color-text-secondary;
       @include utils-vertical-center;
 
       &:hover {
-        background-color: $--color-white;
+        background-color: $--background-color-overlay;
       }
     }
 

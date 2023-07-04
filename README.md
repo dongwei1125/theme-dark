@@ -1,4 +1,4 @@
-# element-theme-darker
+# element-theme-darkplus
 
 > element component dark theme.
 
@@ -7,7 +7,7 @@
 ## Installation
 
 ```shell
-npm i element-theme-darker -S
+npm i element-theme-darkplus -S
 ```
 
 ## Usage
@@ -15,26 +15,26 @@ npm i element-theme-darker -S
 Use Sass import
 
 ```css
-@import 'element-theme-darker';
+@import 'element-theme-darkplus';
 ```
 
 Or Use webpack
 
 ```javascript
-import 'element-theme-darker';
+import 'element-theme-darkplus';
 ```
 
 Or
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/element-theme-darker/lib/index.css">
+<link rel="stylesheet" href="https://unpkg.com/element-theme-darkplus/lib/index.css">
 ```
 
 ##  Import on demand
 
 ```javascript
-import 'element-theme-darker/lib/input.css';
-import 'element-theme-darker/lib/select.css';
+import 'element-theme-darkplus/lib/input.css';
+import 'element-theme-darkplus/lib/select.css';
 
 // ...
 ```
@@ -43,7 +43,7 @@ import 'element-theme-darker/lib/select.css';
 
 ```javascript
 import 'element-ui/lib/theme-chalk/index.css';
-import 'element-theme-darker/lib/index.color.css';
+import 'element-theme-darkplus/lib/index.color.css';
 
 // ...
 ```

@@ -112,38 +112,38 @@
     }
 
     @include when(light) {
-      background: $--tooltip-color;
-      border: 1px solid $--tooltip-fill;
+      background: $--background-color-overlay;
+      border: 1px solid $--border-color-light;
 
       &[x-placement^="top"] .popper__arrow {
-        border-top-color: $--tooltip-fill;
+        border-top-color: $--border-color-light;
 
         &::after {
-          border-top-color: $--tooltip-color;
+          border-top-color: $--background-color-overlay;
         }
       }
 
       &[x-placement^="bottom"] .popper__arrow {
-        border-bottom-color: $--tooltip-fill;
+        border-bottom-color: $--border-color-light;
 
         &::after {
-          border-bottom-color: $--tooltip-color;
+          border-bottom-color: $--background-color-overlay;
         }
       }
 
       &[x-placement^="left"] .popper__arrow {
-        border-left-color: $--tooltip-fill;
+        border-left-color: $--border-color-light;
 
         &::after {
-          border-left-color: $--tooltip-color;
+          border-left-color: $--background-color-overlay;
         }
       }
 
       &[x-placement^="right"] .popper__arrow {
-        border-right-color: $--tooltip-fill;
+        border-right-color: $--border-color-light;
 
         &::after {
-          border-right-color: $--tooltip-color;
+          border-right-color: $--background-color-overlay;
         }
       }
     }

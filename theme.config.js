@@ -5,6 +5,6 @@ module.exports = {
   outputFontDir: './lib/fonts',
   outputColorDir: './lib',
   outputCssExt: 'color',
-  wrapSelector: 'body.dark', // css-wrap
-  extractColorKeywords: ['--ec-ignore-', '#', 'rgb', 'transparent'], // extract-color
+  wrapSelector: 'html.dark', // css-wrap
+  extractColorKeywords: ['--ec-ignore-', '#', 'rgb', 'transparent', 'background:0 0'], // extract-color
 }

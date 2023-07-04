@@ -68,7 +68,7 @@ $typeMap: (
       color: $primaryColor;
 
       &:hover {
-        color: mix($primaryColor, $--color-white, 80%)
+        color: mix($primaryColor, $--color-dark, 70%)
       }
 
       &:after {
@@ -76,7 +76,7 @@ $typeMap: (
       }
 
       @include when(disabled) {
-        color: mix($primaryColor, $--color-white, 50%)
+        color: mix($primaryColor, $--color-dark, 50%)
       }
 
       @include when(underline) {

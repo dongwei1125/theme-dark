@@ -134,7 +134,9 @@
     align-items: center;
 
     &__close.el-icon-close {
-      background-color: $--color-text-placeholder;
+      --ec-ignore-bg: unset;
+
+      background-color: var(--ec-ignore-bg);
       top: 0;
       color: $--color-white;
       flex-shrink: 0;

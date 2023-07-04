@@ -119,8 +119,11 @@
 
       &.is-checked {
         .el-radio__inner {
+          --ec-ignore-bs: none;
+
           background-color: $--radio-disabled-checked-input-fill;
           border-color: $--radio-disabled-checked-input-border-color;
+          box-shadow: var(--ec-ignore-bs);
 
           &::after {
             background-color: $--radio-disabled-checked-icon-color;

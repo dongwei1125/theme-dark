@@ -10,7 +10,14 @@
 
       <el-row>
         <el-cascader :options="options" :props="{ checkStrictly: true }" clearable />
-        <el-cascader :options="options" collapse-tags :props="{ multiple: true }" clearable />
+        <el-cascader
+          :options="options"
+          collapse-tags
+          :props="{ multiple: true }"
+          clearable
+          filterable
+          placeholder="请选择"
+        />
       </el-row>
 
       <el-row>

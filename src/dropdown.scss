@@ -18,13 +18,16 @@
   }
 
   & .el-dropdown__caret-button {
+    --ec-ignore-bl: none;
+
     padding-left: 5px;
     padding-right: 5px;
     position: relative;
-    border-left: none;
+    border-left: var(--ec-ignore-bl);
 
     &::before {
       $gap: 5px;
+      --ec-ignore-opacity: 0.5;
 
       content: '';
       position: absolute;
@@ -33,11 +36,12 @@
       top: $gap;
       bottom: $gap;
       left: 0;
-      background: mix(white, transparent, 50%);
+      opacity: var(--ec-ignore-opacity);
+      background: $--border-color-base;
     }
 
     &.el-button--default::before {
-      background: mix($--button-default-border-color, transparent, 50%);
+      background: $--border-color-base;
     }
 
     &:hover {
@@ -79,8 +83,8 @@
   z-index: 10;
   padding: 10px 0;
   margin: 5px 0;
-  background-color: $--color-white;
-  border: 1px solid $--border-color-lighter;
+  background-color: $--background-color-overlay;
+  border: 1px solid $--border-color-light;
   border-radius: $--border-radius-base;
   box-shadow: $--dropdown-menu-box-shadow;
 
@@ -116,7 +120,7 @@
         height: $divided-offset;
         display: block;
         margin: 0 -20px;
-        background-color: $--color-white;
+        background-color: $--background-color-overlay;
       }
     }
 

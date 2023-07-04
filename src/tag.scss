@@ -2,8 +2,8 @@
 @import "common/var";
 
 @mixin genTheme($backgroundColorWeight, $borderColorWeight, $fontColorWeight, $hoverColorWeight) {
-  background-color: mix($--tag-primary-color, $--color-white, $backgroundColorWeight);
-  border-color: mix($--tag-primary-color, $--color-white, $borderColorWeight);
+  background-color: mix($--tag-primary-color, $--color-dark, $backgroundColorWeight);
+  border-color: mix($--tag-primary-color, $--color-dark, $borderColorWeight);
   color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
 
   @include when(hit) {
@@ -15,13 +15,13 @@
 
     &:hover {
       color: $--color-white;
-      background-color: mix($--tag-primary-color, $--color-white, $hoverColorWeight);
+      background-color: mix($--tag-primary-color, $--color-dark, $hoverColorWeight);
     }
   }
 
   &.el-tag--info {
-    background-color: mix($--tag-info-color, $--color-white, $backgroundColorWeight);
-    border-color: mix($--tag-info-color, $--color-white, $borderColorWeight);
+    background-color: mix($--tag-info-color, $--color-dark, $backgroundColorWeight);
+    border-color: mix($--tag-info-color, $--color-dark, $borderColorWeight);
     color: mix($--tag-info-color, $--color-white, $fontColorWeight);
 
     @include when(hit) {
@@ -33,14 +33,14 @@
 
       &:hover {
         color: $--color-white;
-        background-color: mix($--tag-info-color, $--color-white, $hoverColorWeight);
+        background-color: mix($--tag-info-color, $--color-dark, $hoverColorWeight);
       }
     }
   }
 
   &.el-tag--success {
-    background-color: mix($--tag-success-color, $--color-white, $backgroundColorWeight);
-    border-color: mix($--tag-success-color, $--color-white, $borderColorWeight);
+    background-color: mix($--tag-success-color, $--color-dark, $backgroundColorWeight);
+    border-color: mix($--tag-success-color, $--color-dark, $borderColorWeight);
     color: mix($--tag-success-color, $--color-white, $fontColorWeight);
 
     @include when(hit) {
@@ -52,14 +52,14 @@
 
       &:hover {
         color: $--color-white;
-        background-color: mix($--tag-success-color, $--color-white, $hoverColorWeight);
+        background-color: mix($--tag-success-color, $--color-dark, $hoverColorWeight);
       }
     }
   }
 
   &.el-tag--warning {
-    background-color: mix($--tag-warning-color, $--color-white, $backgroundColorWeight);
-    border-color: mix($--tag-warning-color, $--color-white, $borderColorWeight);
+    background-color: mix($--tag-warning-color, $--color-dark, $backgroundColorWeight);
+    border-color: mix($--tag-warning-color, $--color-dark, $borderColorWeight);
     color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
 
     @include when(hit) {
@@ -71,14 +71,14 @@
 
       &:hover {
         color: $--color-white;
-        background-color: mix($--tag-warning-color, $--color-white, $hoverColorWeight);
+        background-color: mix($--tag-warning-color, $--color-dark, $hoverColorWeight);
       }
     }
   }
 
   &.el-tag--danger {
-    background-color: mix($--tag-danger-color, $--color-white, $backgroundColorWeight);
-    border-color: mix($--tag-danger-color, $--color-white, $borderColorWeight);
+    background-color: mix($--tag-danger-color, $--color-dark, $backgroundColorWeight);
+    border-color: mix($--tag-danger-color, $--color-dark, $borderColorWeight);
     color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
 
     @include when(hit) {
@@ -90,7 +90,7 @@
 
       &:hover {
         color: $--color-white;
-        background-color: mix($--tag-danger-color, $--color-white, $hoverColorWeight);
+        background-color: mix($--tag-danger-color, $--color-dark, $hoverColorWeight);
       }
     }
   }
@@ -129,11 +129,19 @@
   }
 
   @include m(dark) {
-    @include genTheme(100%, 100%, 0, 80%);
+    @include genTheme(100%, 100%, 0, 70%);
   }
 
   @include m(plain) {
-    @include genTheme(0, 40%, 100%, 100%);
+    @include genTheme(0, 50%, 100%, 100%);
+
+    &,
+    &.el-tag--info,
+    &.el-tag--success,
+    &.el-tag--warning,
+    &.el-tag--danger {
+      background-color: transparent;
+    }
   }
 
   @include m(medium) {

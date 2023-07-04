@@ -8,7 +8,7 @@
 
   @include e(text) {
     font-size: 14px;
-    color: $--color-text-regular;
+    color: $--color-text-regular !important;
     display: inline-block;
     vertical-align: middle;
     margin-left: 10px;
@@ -36,6 +36,10 @@
         vertical-align: middle;
         display: inline-block;
       }
+    }
+
+    .el-progress-circle__track {
+      stroke: $--background-color-base;
     }
   }
 
@@ -65,7 +69,7 @@
     }
 
     .el-progress__text {
-      color: $--color-success;
+      color: $--color-success !important;
     }
   }
 
@@ -75,7 +79,7 @@
     }
 
     .el-progress__text {
-      color: $--color-warning;
+      color: $--color-warning !important;
     }
   }
 
@@ -85,7 +89,7 @@
     }
 
     .el-progress__text {
-      color: $--color-danger;
+      color: $--color-danger !important;
     }
   }
 }
@@ -101,7 +105,7 @@
   @include e(outer) {
     height: 6px;
     border-radius: 100px;
-    background-color: $--border-color-lighter;
+    background-color: $--border-color-lighter !important;
     overflow: hidden;
     position: relative;
     vertical-align: middle;
@@ -125,7 +129,7 @@
   @include e(innerText) {
     display: inline-block;
     vertical-align: middle;
-    color: $--color-white;
+    color: $--color-white !important;
     font-size: 12px;
     margin: 0 5px;
   }

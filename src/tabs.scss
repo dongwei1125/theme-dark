@@ -21,7 +21,7 @@
 
   @include e(new-tab) {
     float: right;
-    border: 1px solid #d3dce6;
+    border: 1px solid $--border-color-base;
     height: 18px;
     width: 18px;
     line-height: 18px;
@@ -29,7 +29,7 @@
     border-radius: 3px;
     text-align: center;
     font-size: 12px;
-    color: #d3dce6;
+    color: $--color-text-primary;
     cursor: pointer;
     transition: all .15s;
 
@@ -215,7 +215,7 @@
       }
 
       &.is-active {
-        border-bottom-color: $--color-white;
+        border-bottom-color: $--background-color;
 
         &.is-closable {
           padding-left: 20px;
@@ -230,7 +230,7 @@
   }
 
   @include m(border-card) {
-    background: $--color-white;
+    background: $--background-color-overlay;
     border: 1px solid $--border-color-base;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
 
@@ -264,7 +264,7 @@
 
       &.is-active {
         color: $--color-primary;
-        background-color: $--color-white;
+        background-color: $--background-color-overlay;
         border-right-color: $--border-color-base;
         border-left-color: $--border-color-base;
       }
@@ -478,7 +478,7 @@
 
     &.el-tabs--border-card {
       .el-tabs__header.is-left {
-        border-right: 1px solid #dfe4ed;
+        border-right: 1px solid $--border-color-base;
       }
 
       .el-tabs__item.is-left {
@@ -553,7 +553,7 @@
 
     &.el-tabs--border-card {
       .el-tabs__header.is-right {
-        border-left: 1px solid #dfe4ed;
+        border-left: 1px solid $--border-color-base;
       }
 
       .el-tabs__item.is-right {

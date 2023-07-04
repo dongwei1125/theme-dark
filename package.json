@@ -1,6 +1,6 @@
 {
-  "name": "element-theme-darker",
-  "version": "0.0.7",
+  "name": "element-theme-darkplus",
+  "version": "1.0.0",
   "description": "Element component dark theme.",
   "main": "lib/index.css",
   "style": "lib/index.css",

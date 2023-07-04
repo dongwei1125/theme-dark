@@ -6,6 +6,9 @@
       <el-badge :value="12">
         <el-button>评论</el-button>
       </el-badge>
+      <el-badge :value="2" type="warning">
+        <el-button>回复</el-button>
+      </el-badge>
       <el-badge is-dot>
         <el-button icon="el-icon-share" type="primary" />
       </el-badge>

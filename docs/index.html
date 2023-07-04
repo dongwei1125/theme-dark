@@ -11,16 +11,16 @@
   <script src="https://unpkg.com/vue3-sfc-loader@0.8.4/dist/vue2-sfc-loader.js"></script>
   <script src="https://unpkg.com/element-ui@2.15.13/lib/index.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.13/lib/theme-chalk/index.css">
-  <link rel="stylesheet" href="https://unpkg.com/element-theme-darker/lib/index.color.css">
+  <link rel="stylesheet" href="https://unpkg.com/element-theme-darkplus/lib/index.color.css">
 
   <style>
-    body {
+    html {
       --border-color: #dcdfe6;
       --bg-color: #ffffff;
       --el-text-color: #606266;
     }
 
-    body.dark {
+    html.dark {
       --border-color: #4c4d4f;
       --bg-color: #141414;
       --el-text-color: #cfd3dc;
@@ -56,34 +56,34 @@
       margin-bottom: 0;
     }
 
-    body::-webkit-scrollbar {
+    html::-webkit-scrollbar {
       width: 6px
     }
 
-    body::-webkit-scrollbar:horizontal {
+    html::-webkit-scrollbar:horizontal {
       height: 6px
     }
 
-    body::-webkit-scrollbar-track {
+    html::-webkit-scrollbar-track {
       border-radius: 10px
     }
 
-    body::-webkit-scrollbar-thumb {
+    html::-webkit-scrollbar-thumb {
       background-color: #0003;
       border-radius: 10px;
       transition: all .2s ease-in-out
     }
 
-    body::-webkit-scrollbar-thumb:hover {
+    html::-webkit-scrollbar-thumb:hover {
       cursor: pointer;
       background-color: #0000004d
     }
 
-    body.dark::-webkit-scrollbar-thumb {
+    html.dark::-webkit-scrollbar-thumb {
       background-color: #fff3
     }
 
-    body.dark::-webkit-scrollbar-thumb:hover {
+    html.dark::-webkit-scrollbar-thumb:hover {
       background-color: #fff6
     }
   </style>

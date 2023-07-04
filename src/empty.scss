@@ -26,6 +26,60 @@
       width: 100%;
       height: 100%;
       vertical-align: top;
+
+      #Rectangle-Copy-10 {
+        fill: $--empty-fill-color-7;
+      }
+
+      #Rectangle-Copy-11 {
+        fill: $--empty-fill-color-5;
+      }
+
+      // #Rectangle-Copy-12
+      linearGradient[id^=linearGradient-1] {
+        stop:first-child {
+          stop-color: $--empty-fill-color-1;
+        }
+
+        stop:last-child {
+          stop-color: $--empty-fill-color-4;
+        }
+      }
+
+      #Rectangle-Copy-13 {
+        fill: $--empty-fill-color-2;
+      }
+
+      #Rectangle-Copy-14 {
+        fill: $--empty-fill-color-7;
+      }
+
+      // #Rectangle-Copy-15
+      linearGradient[id^=linearGradient-2] {
+        stop:first-child {
+          stop-color: $--empty-fill-color-1;
+        }
+
+        stop:last-child {
+          stop-color: $--empty-fill-color-6;
+        }
+      }
+
+      #Rectangle-Copy-18 {
+        fill: $--empty-fill-color-2;
+      }
+
+      #Rectangle-Copy {
+        fill: $--empty-fill-color-9;
+      }
+
+      #Mask {
+        fill: $--empty-fill-color-8;
+      }
+
+      #Oval-Copy-2 {
+        fill: $--empty-fill-color-3;
+      }
     }
   }
 

@@ -67,6 +67,7 @@
     text-align: center;
     font-size: $--font-size-base;
     color: $--color-text-regular;
+    background: transparent;
 
     &::placeholder {
       color: $--color-text-placeholder;

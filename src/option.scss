@@ -20,7 +20,9 @@
       cursor: not-allowed;
 
       &:hover {
-        background-color: $--color-white;
+        --ec-ignore-bg: unset;
+
+        background-color: var(--ec-ignore-bg);
       }
     }
 

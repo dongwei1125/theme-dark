@@ -11,7 +11,7 @@
   flex: 1;
   width: 100%;
   max-width: 100%;
-  background-color: $--color-white;
+  background-color: transparent;
   font-size: 14px;
   color: $--table-font-color;
 
@@ -44,7 +44,7 @@
   @include e(expand-icon) {
     position: relative;
     cursor: pointer;
-    color: #666;
+    color: $--color-text-regular;
     font-size: 12px;
     transition: transform 0.2s ease-in-out;
     height: 20px;
@@ -63,7 +63,7 @@
   }
 
   @include e(expanded-cell) {
-    background-color: $--color-white;
+    background-color: transparent;
 
     // 纯属为了增加权重
     &[class*=cell] {
@@ -171,7 +171,7 @@
   }
 
   tr {
-    background-color: $--color-white;
+    background-color: transparent;
 
     input[type="checkbox"] {
       margin: 0;
@@ -276,8 +276,10 @@
 
   // table--border
   @include m(border) {
-    border-right: none;
-    border-bottom: none;
+    --ec-ignore-border: none;
+
+    border-right: var(--ec-ignore-border);
+    border-bottom: var(--ec-ignore-border);
 
     &.el-loading-parent--relative {
       border-color: transparent;
@@ -312,6 +314,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
     box-shadow: $--table-fixed-box-shadow;
+    background: $--background-color;
 
     &::before {
       content: '';
@@ -487,7 +490,7 @@
     & .el-table__body {
       & tr.el-table__row--striped {
         td.el-table__cell {
-          background: #FAFAFA;
+          background: $--fill-color-lighter;
         }
 
         &.current-row td.el-table__cell {

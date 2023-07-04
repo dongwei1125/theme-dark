@@ -20,8 +20,10 @@
   }
 
   @include e(body) {
-    color: $--color-text-regular;
-    background-color: $--color-white;
+    --ec-ignore-color: unset;
+
+    color: var(--ec-ignore-color);
+    background-color: transparent;
 
     .el-descriptions__table {
       border-collapse: collapse;

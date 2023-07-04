@@ -1,8 +1,14 @@
 <template>
   <div class="index">
     <div class="navbar">
-      <h1>Element-theme-darker</h1>
-      <el-switch v-model="dark" />
+      <h1>Element-theme-darkplus</h1>
+
+      <div>
+        <a href="https://github.com/dongwei1125/theme-dark" target="_black">GitHub</a>
+        <a href="https://gitee.com/dongwei1125/theme-dark" target="_black">Gitee</a>
+        <a href="https://www.npmjs.com/package/element-theme-darkplus" target="_black">NPM</a>
+        <el-switch v-model="dark" />
+      </div>
     </div>
 
     <div class="content">
@@ -201,15 +207,15 @@ export default {
   },
   methods: {
     open() {
-      const withoutClassName = !hasClass(document.body, ClassName)
+      const withoutClassName = !hasClass(document.documentElement, ClassName)
 
       if (withoutClassName) {
-        addClass(document.body, ClassName)
+        addClass(document.documentElement, ClassName)
       }
     },
 
     close() {
-      removeClass(document.body, ClassName)
+      removeClass(document.documentElement, ClassName)
     },
   },
 }
@@ -223,7 +229,7 @@ export default {
   left: 0;
   right: 0;
   top: 0;
-  padding: 0 12px 0 32px;
+  padding: 0 26px 0 32px;
   border-bottom: 1px solid var(--border-color);
   background-image: radial-gradient(transparent 1px, var(--bg-color) 1px);
   background-size: 4px 4px;
@@ -240,6 +246,16 @@ export default {
   font-size: 24px;
   font-weight: 500;
   font-family: 'Segoe UI';
+}
+
+.navbar a {
+  display: inline-block;
+  height: 100%;
+  padding: 0 12px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #409eff;
+  text-decoration: none;
 }
 
 .content {

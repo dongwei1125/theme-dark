@@ -39,7 +39,7 @@
 
   & .el-input__count {
     color: $--color-info;
-    background: $--color-white;
+    background: transparent;
     position: absolute;
     font-size: 12px;
     bottom: 5px;
@@ -96,7 +96,7 @@
     font-size: 12px;
 
     .el-input__count-inner {
-      background: $--color-white;
+      background: transparent;
       line-height: initial;
       display: inline-block;
       padding: 0 5px;
@@ -308,9 +308,11 @@
     button.el-button,
     div.el-select .el-input__inner,
     div.el-select:hover .el-input__inner {
+      --ec-ignore-color: inherit;
+
       border-color: transparent;
       background-color: transparent;
-      color: inherit;
+      color: var(--ec-ignore-color);
       border-top: 0;
       border-bottom: 0;
     }
@@ -322,13 +324,17 @@
   }
 
   @include e(prepend) {
-    border-right: 0;
+    --ec-ignore-br: 0;
+
+    border-right: var(--ec-ignore-br);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
 
   @include e(append) {
-    border-left: 0;
+    --ec-ignore-bl: 0;
+
+    border-left: var(--ec-ignore-bl);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }

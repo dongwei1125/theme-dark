@@ -21,7 +21,9 @@
   }
 
   i {
-    color: $--color-text-secondary;
+    --ec-ignore-color: inherit;
+
+    color: var(--ec-ignore-color);
   }
 
   &:hover,
@@ -38,7 +40,7 @@
 }
 
 @include b(menu) {
-  border-right: solid 1px #e6e6e6;
+  border-right: solid 1px $--border-color-base;
   list-style: none;
   position: relative;
   margin: 0;
@@ -47,11 +49,13 @@
   @include utils-clearfix;
 
   &.el-menu--horizontal {
-    border-bottom: solid 1px #e6e6e6;
+    border-bottom: solid 1px $--border-color-base;
   }
 
   @include m(horizontal) {
-    border-right: none;
+    --ec-ignore-br: none;
+
+    border-right: var(--ec-ignore-br);
 
     &>.el-menu-item {
       float: left;
@@ -59,7 +63,7 @@
       line-height: 60px;
       margin: 0;
       border-bottom: 2px solid transparent;
-      color: $--color-text-secondary;
+      color: $--color-text-primary;
 
       a,
       a:hover {
@@ -68,7 +72,7 @@
 
       &:not(.is-disabled):hover,
       &:not(.is-disabled):focus {
-        background-color: #fff;
+        background-color: $--menu-item-hover-fill;
       }
     }
 
@@ -80,14 +84,14 @@
         outline: none;
 
         .el-submenu__title {
-          color: $--color-text-primary;
+          color: $--color-primary;
         }
       }
 
       &.is-active {
         .el-submenu__title {
           border-bottom: 2px solid $--color-primary;
-          color: $--color-text-primary;
+          color: $--color-primary;
         }
       }
 
@@ -95,10 +99,10 @@
         height: 60px;
         line-height: 60px;
         border-bottom: 2px solid transparent;
-        color: $--color-text-secondary;
+        color: $--color-text-primary;
 
         &:hover {
-          background-color: #fff;
+          background-color: $--background-color-overlay;
         }
       }
 
@@ -114,29 +118,30 @@
 
       & .el-menu-item,
       & .el-submenu__title {
-        background-color: $--color-white;
+        background-color: transparent;
         float: none;
         height: 36px;
         line-height: 36px;
         padding: 0 10px;
-        color: $--color-text-secondary;
+        color: $--color-text-primary;
       }
 
       & .el-menu-item.is-active,
       & .el-submenu.is-active>.el-submenu__title {
-        color: $--color-text-primary;
+        color: $--color-primary;
       }
     }
 
     & .el-menu-item:not(.is-disabled):hover,
     & .el-menu-item:not(.is-disabled):focus {
       outline: none;
-      color: $--color-text-primary;
+      color: $--color-primary;
+      background-color: $--menu-item-hover-fill;
     }
 
     &>.el-menu-item.is-active {
       border-bottom: 2px solid $--color-primary;
-      color: $--color-text-primary;
+      color: $--color-primary;
     }
   }
 
@@ -182,7 +187,7 @@
         top: 0;
         left: 100%;
         z-index: 10;
-        border: 1px solid $--border-color-light;
+        border: 1px solid transparent;
         border-radius: $--border-radius-small;
         box-shadow: $--box-shadow-light;
       }
@@ -196,12 +201,15 @@
   }
 
   @include m(popup) {
+    --ec-ignore-border: none;
+
     z-index: 100;
     min-width: 200px;
-    border: none;
+    border: var(--ec-ignore-border);
     padding: 5px 0;
     border-radius: $--border-radius-small;
     box-shadow: $--box-shadow-light;
+    background-color: $--background-color-overlay;
 
     &-bottom-start {
       margin-top: 5px;
@@ -248,7 +256,9 @@
   }
 
   & .el-menu {
-    border: none;
+    --ec-ignore-border: none;
+
+    border: var(--ec-ignore-border);
   }
 
   & .el-menu-item {

@@ -111,12 +111,14 @@
       }
 
       .el-icon-close {
+        --ec-ignore-bc: unset;
+
         flex: none;
-        background-color: $--color-text-placeholder;
-        color: $--color-white;
+        background-color: var(--ec-ignore-bc);
+        color: $--color-info;
 
         &:hover {
-          background-color: $--color-text-secondary;
+          background-color: $--color-info;
         }
       }
     }
@@ -172,6 +174,7 @@
     margin: 2px 0 2px 15px;
     padding: 0;
     color: $--cascader-menu-font-color;
+    background: $--background-color;
     border: none;
     outline: none;
     box-sizing: border-box;
