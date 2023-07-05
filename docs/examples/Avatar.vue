@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Avatar</h2>
+    <h2 id="Avatar">Avatar 头像</h2>
 
     <div class="example">
       <el-avatar icon="el-icon-user-solid" />

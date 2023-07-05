@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Message</h2>
+    <h2 id="Message">Message 消息提示</h2>
 
     <div class="example">
       <el-button :plain="true" @click="open1">消息</el-button>

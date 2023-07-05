@@ -1,45 +1,29 @@
 <template>
   <div>
-    <h2>Upload</h2>
+    <h2 id="Upload">Upload 上传</h2>
 
     <div class="example">
       <el-row>
-        <el-upload
-          action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-          :file-list="fileList"
-        >
+        <el-upload :action="action" :file-list="fileList">
           <el-button type="primary">点击上传</el-button>
         </el-upload>
       </el-row>
 
       <el-row>
-        <el-upload
-          action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-          :file-list="fileList"
-          :on-preview="onPreview"
-          list-type="picture-card"
-        >
+        <el-upload :action="action" :file-list="fileList" :on-preview="onPreview" list-type="picture-card">
           <i class="el-icon-plus" />
         </el-upload>
       </el-row>
 
       <el-row>
-        <el-upload
-          action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-          :file-list="fileList"
-          list-type="picture"
-        >
+        <el-upload :action="action" :file-list="fileList" list-type="picture">
           <el-button size="small" type="primary">点击上传</el-button>
           <p slot="tip">只能上传jpg/png文件，且不超过500kb</p>
         </el-upload>
       </el-row>
 
       <el-row>
-        <el-upload
-          action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-          :file-list="fileList"
-          drag
-        >
+        <el-upload :action="action" :file-list="fileList" drag>
           <i class="el-icon-upload" />
           <div class="el-upload__text">
             将文件拖到此处，或
@@ -57,6 +41,7 @@ export default {
   name: 'Upload',
   data() {
     return {
+      action: 'https://jsonplaceholder.typicode.com/posts/',
       fileList: [
         {
           name: 'food.jpeg',

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Rate</h2>
+    <h2 id="Rate">Rate 评分</h2>
 
     <div class="example">
       <el-row :gutter="12">

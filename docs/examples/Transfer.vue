@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2>Transfer</h2>
+    <h2 id="Transfer">Transfer 穿梭框</h2>
 
     <div class="example">
       <el-row>
-        <el-transfer v-model="value" filterable filter-placeholder="请输入城市拼音" :data="data">
+        <el-transfer v-model="values" filterable filter-placeholder="请输入城市拼音" :data="data">
           <el-button slot="left-footer" size="small">操作</el-button>
           <el-button slot="right-footer" size="small">操作</el-button>
         </el-transfer>
@@ -18,7 +18,7 @@ export default {
   name: 'Transfer',
   data() {
     return {
-      value: [],
+      values: [],
       data: [
         {
           label: '上海',

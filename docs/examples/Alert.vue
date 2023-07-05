@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Alert</h2>
+    <h2 id="Alert">Alert 警告</h2>
 
     <div class="example">
       <el-row>

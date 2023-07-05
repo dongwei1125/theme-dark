@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2>Notification</h2>
+    <h2 id="Notification">Notification 通知</h2>
 
     <div class="example">
       <el-button plain @click="open1">成功</el-button>
-      <el-button plain @click="open2">警告 </el-button>
+      <el-button plain @click="open2">警告</el-button>
       <el-button plain @click="open3">消息</el-button>
       <el-button plain @click="open4">错误</el-button>
     </div>

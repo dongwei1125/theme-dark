@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Breadcrumb</h2>
+    <h2 id="Breadcrumb">Breadcrumb 面包屑</h2>
 
     <div class="example">
       <el-breadcrumb separator-class="el-icon-arrow-right">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Badge</h2>
+    <h2 id="Badge">Badge 标记</h2>
 
     <div class="example">
       <el-badge :value="12">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Link</h2>
+    <h2 id="Link">Link 文字链接</h2>
 
     <div class="example">
       <el-row>

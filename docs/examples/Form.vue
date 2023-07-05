@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Form</h2>
+    <h2 id="Form">Form 表单</h2>
 
     <div class="example">
       <el-form ref="form" :model="form" :rules="rules" label-width="100px">
@@ -87,15 +87,7 @@ export default {
   },
   methods: {
     handleSubmit() {
-      this.$refs.form.validate(valid => {
-        if (valid) {
-          alert('submit!')
-        } else {
-          console.log('error submit!!')
-
-          return false
-        }
-      })
+      this.$refs.form.validate()
     },
 
     handleReset() {

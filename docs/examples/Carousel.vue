@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2>Carousel</h2>
+    <h2 id="Carousel">Carousel 走马灯</h2>
 
     <div class="example">
       <el-carousel :autoplay="false">
-        <el-carousel-item v-for="(item, index) in list" :key="index">
+        <el-carousel-item v-for="(item, index) in 4" :key="index">
           <h3>{{ item }}</h3>
         </el-carousel-item>
       </el-carousel>
@@ -15,11 +15,6 @@
 <script>
 export default {
   name: 'Carousel',
-  data() {
-    return {
-      list: [1, 2, 3, 4],
-    }
-  },
 }
 </script>
 

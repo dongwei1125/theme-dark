@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>TimePicker</h2>
+    <h2 id="TimePicker">TimePicker 时间选择器</h2>
 
     <div class="example">
       <el-row :gutter="12">
@@ -32,7 +32,7 @@
 
       <el-row>
         <el-time-picker
-          v-model="range"
+          v-model="values"
           is-range
           arrow-control
           range-separator="至"
@@ -53,7 +53,7 @@ export default {
     return {
       selectValue: '',
       pickerValue: '',
-      range: [new Date(), new Date()],
+      values: [new Date(), new Date()],
     }
   },
 }

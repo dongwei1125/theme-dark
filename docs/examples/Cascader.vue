@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h2>Cascader</h2>
+    <h2 id="Cascader">Cascader 级联选择器</h2>
 
     <div class="example">
       <el-row>
         <el-cascader placeholder="试试搜索：指南" :options="options" clearable filterable />
-        <el-cascader v-model="value" :options="options" disabled />
+        <el-cascader v-model="values" :options="options" disabled />
       </el-row>
 
       <el-row>
@@ -32,7 +32,7 @@ export default {
   name: 'Cascader',
   data() {
     return {
-      value: ['zhinan', 'yuanze', 'yizhi'],
+      values: ['zhinan', 'yuanze', 'yizhi'],
       options: [
         {
           value: 'zhinan',

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Menu</h2>
+    <h2 id="Menu">Menu 导航菜单</h2>
 
     <div class="example">
       <el-row>

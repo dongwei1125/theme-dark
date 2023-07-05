@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Descriptions</h2>
+    <h2 id="Descriptions">Descriptions 描述列表</h2>
 
     <div class="example">
       <el-descriptions title="用户信息" border>

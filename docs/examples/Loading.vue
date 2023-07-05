@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Loading</h2>
+    <h2 id="Loading">Loading 加载</h2>
 
     <div class="example">
       <el-row>

@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/vue@2.5.17/dist/vue.min.js"></script>
   <script src="https://unpkg.com/vue3-sfc-loader@0.8.4/dist/vue2-sfc-loader.js"></script>
   <script src="https://unpkg.com/element-ui@2.15.13/lib/index.js"></script>
+  <script src="https://unpkg.com/fuse.js@6.6.2/dist/fuse.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.13/lib/theme-chalk/index.css">
   <link rel="stylesheet" href="https://unpkg.com/element-theme-darkplus/lib/index.color.css">
 
@@ -37,7 +38,8 @@
     }
 
     h2 {
-      margin-top: 0;
+      margin: 0;
+      padding: 70px 0 15px;
       color: var(--el-text-color);
     }
 
@@ -45,7 +47,6 @@
       padding: 24px;
       border: 1px solid var(--border-color);
       border-radius: 4px;
-      margin-bottom: 24px;
     }
 
     .el-row {
@@ -87,11 +88,117 @@
       background-color: #fff6
     }
   </style>
+
+  <style>
+    .first-loading-wrp {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 420px;
+      height: 100%;
+      font-family: 'Segoe UI';
+    }
+
+    .first-loading-wrp>h1 {
+      color: #409eff;
+      font-size: 80px;
+    }
+
+    .first-loading-wrp .loading-wrp {
+      padding: 98px;
+      display: flex;
+      justify-content: center;
+      align-items: center
+    }
+
+    .dot {
+      animation: antRotate 1.2s infinite linear;
+      transform: rotate(45deg);
+      position: relative;
+      display: inline-block;
+      font-size: 32px;
+      width: 32px;
+      height: 32px;
+      box-sizing: border-box
+    }
+
+    .dot i {
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      display: block;
+      background-color: #409eff;
+      border-radius: 100%;
+      transform: scale(.75);
+      transform-origin: 50% 50%;
+      opacity: .3;
+      animation: antSpinMove 1s infinite linear alternate
+    }
+
+    .dot i:nth-child(1) {
+      top: 0;
+      left: 0
+    }
+
+    .dot i:nth-child(2) {
+      top: 0;
+      right: 0;
+      -webkit-animation-delay: .4s;
+      animation-delay: .4s
+    }
+
+    .dot i:nth-child(3) {
+      right: 0;
+      bottom: 0;
+      -webkit-animation-delay: .8s;
+      animation-delay: .8s
+    }
+
+    .dot i:nth-child(4) {
+      bottom: 0;
+      left: 0;
+      -webkit-animation-delay: 1.2s;
+      animation-delay: 1.2s
+    }
+
+    @keyframes antRotate {
+      to {
+        -webkit-transform: rotate(405deg);
+        transform: rotate(405deg)
+      }
+    }
+
+    @-webkit-keyframes antRotate {
+      to {
+        -webkit-transform: rotate(405deg);
+        transform: rotate(405deg)
+      }
+    }
+
+    @keyframes antSpinMove {
+      to {
+        opacity: 1
+      }
+    }
+
+    @-webkit-keyframes antSpinMove {
+      to {
+        opacity: 1
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
-    <Index />
+    <div class="first-loading-wrp">
+      <h1>Element-theme-darkplus</h1>
+      <div class="loading-wrp">
+        <span class="dot dot-spin"><i></i><i></i><i></i><i></i></span>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">Powered by dongwei</div>
+    </div>
   </div>
 
   <script type="module">
@@ -118,7 +225,7 @@
       },
     }
 
-    loadModule('./index.vue', options)
+    loadModule('./App.vue', options)
       .then(component => new Vue(component).$mount('#app'))
   </script>
 </body>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>ColorPicker</h2>
+    <h2 id="ColorPicker">ColorPicker 颜色选择器</h2>
 
     <div class="example">
       <el-color-picker v-model="value" show-alpha :predefine="predefineColors" size="small" />

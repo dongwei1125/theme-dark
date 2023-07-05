@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Tooltip</h2>
+    <h2 id="Tooltip">Tooltip 文字提示</h2>
 
     <div class="example">
       <el-tooltip content="Top center" placement="top">

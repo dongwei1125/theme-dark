@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Switch</h2>
+    <h2 id="Switch">Switch 开关</h2>
 
     <div class="example">
       <el-row :gutter="12">

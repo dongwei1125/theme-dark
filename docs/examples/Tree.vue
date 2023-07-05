@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Tree</h2>
+    <h2 id="Tree">Tree 树形控件</h2>
 
     <div class="example">
       <el-row>
@@ -92,6 +92,5 @@ export default {
       ],
     }
   },
-  methods: {},
 }
 </script>

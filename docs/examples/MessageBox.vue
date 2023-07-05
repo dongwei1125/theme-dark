@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>MessageBox</h2>
+    <h2 id="MessageBox">MessageBox 弹框</h2>
 
     <div class="example">
       <el-button type="text" @click="open">点击打开 Message Box</el-button>

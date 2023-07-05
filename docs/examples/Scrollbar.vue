@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2>Scrollbar</h2>
+    <h2 id="Scrollbar">Scrollbar 滚动条</h2>
 
     <div class="example">
       <el-scrollbar tag="ul">
-        <li v-for="item in 20" :key="item" class="scrollbar-item">{{ item }}</li>
+        <li v-for="(item, index) in 20" :key="index">{{ item }}</li>
       </el-scrollbar>
     </div>
   </div>
@@ -24,11 +24,7 @@ li {
   list-style: none;
 }
 
-.el-scrollbar {
-  height: 400px;
-}
-
-.scrollbar-item {
+.el-scrollbar li {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +33,12 @@ li {
   text-align: center;
   border-radius: 4px;
   color: #409eff;
+  font-weight: bold;
   box-shadow: 0 0 1px 1px #409eff;
+}
+
+.el-scrollbar {
+  height: 400px;
 }
 
 .el-scrollbar >>> .el-scrollbar__wrap {

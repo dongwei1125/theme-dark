@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Collapse</h2>
+    <h2 id="Collapse">Collapse 折叠面板</h2>
 
     <div class="example">
       <el-collapse accordion>

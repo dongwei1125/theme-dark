@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Tabs</h2>
+    <h2 id="Tabs">Tabs 标签页</h2>
 
     <div class="example">
       <el-row>
@@ -31,8 +31,8 @@
       </el-row>
 
       <el-row>
-        <el-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
-          <el-tab-pane v-for="item in editableTabs" :key="item.name" :label="item.title" :name="item.name">
+        <el-tabs v-model="tab" type="card" editable @edit="handleTabsEdit">
+          <el-tab-pane v-for="item in tabs" :key="item.name" :label="item.title" :name="item.name">
             {{ item.content }}
           </el-tab-pane>
         </el-tabs>
@@ -47,8 +47,8 @@ export default {
   data() {
     return {
       activeName: 'second',
-      editableTabsValue: '2',
-      editableTabs: [
+      tab: '2',
+      tabs: [
         {
           title: 'Tab 1',
           name: '1',
@@ -76,6 +76,7 @@ export default {
 
         this.editableTabsValue = newTabName
       }
+
       if (action === 'remove') {
         const tabs = this.editableTabs
         var activeName = this.editableTabsValue
