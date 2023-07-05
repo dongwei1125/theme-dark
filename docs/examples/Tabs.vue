@@ -31,7 +31,7 @@
       </el-row>
 
       <el-row>
-        <el-tabs v-model="tab" type="card" editable @edit="handleTabsEdit">
+        <el-tabs v-model="tab" type="card" editable @edit="handleEdit">
           <el-tab-pane v-for="item in tabs" :key="item.name" :label="item.title" :name="item.name">
             {{ item.content }}
           </el-tab-pane>
@@ -64,37 +64,37 @@ export default {
     }
   },
   methods: {
-    handleTabsEdit(targetName, action) {
+    handleEdit(targetTab, action) {
       if (action === 'add') {
-        const newTabName = ++this.tabIndex + ''
+        const tab = ++this.tabIndex + ''
 
-        this.editableTabs.push({
+        this.tabs.push({
           title: 'New Tab',
-          name: newTabName,
+          name: tab,
           content: 'New Tab content',
         })
 
-        this.editableTabsValue = newTabName
+        this.tab = tab
       }
 
       if (action === 'remove') {
-        const tabs = this.editableTabs
-        var activeName = this.editableTabsValue
+        const tabs = this.tabs
+        var tab = this.tab
 
-        if (activeName === targetName) {
+        if (tab === targetTab) {
           tabs.forEach((tab, index) => {
-            if (tab.name === targetName) {
+            if (tab.name === targetTab) {
               const nextTab = tabs[index + 1] || tabs[index - 1]
 
               if (nextTab) {
-                activeName = nextTab.name
+                tab = nextTab.name
               }
             }
           })
         }
 
-        this.editableTabsValue = activeName
-        this.editableTabs = tabs.filter(tab => tab.name !== targetName)
+        this.tab = tab
+        this.tabs = tabs.filter(tab => tab.name !== targetTab)
       }
     },
   },

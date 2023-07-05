@@ -1,1 +1,1 @@
-html.dark .el-select-group__wrap:not(:last-of-type)::after{background:#414243}html.dark .el-select-group__title{color:#909399}
+.dark .el-select-group__wrap:not(:last-of-type)::after{background:#414243}.dark .el-select-group__title{color:#909399}

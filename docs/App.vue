@@ -269,4 +269,10 @@ export default {
   padding: 24px;
   box-sizing: border-box;
 }
+
+.content >>> h2 {
+  margin: 0;
+  padding: 70px 0 15px;
+  color: var(--el-text-color);
+}
 </style>
