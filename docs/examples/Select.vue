@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Select</h2>
+    <h2 id="Select">Select 选择器</h2>
 
     <div class="example">
       <el-row>
@@ -26,7 +26,7 @@
       </el-row>
 
       <el-row>
-        <el-select v-model="valueList" multiple collapse-tags placeholder="请选择">
+        <el-select v-model="values" multiple collapse-tags placeholder="请选择">
           <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
         </el-select>
       </el-row>
@@ -50,7 +50,7 @@
         </el-select>
 
         <el-select
-          v-model="valueList"
+          v-model="values"
           multiple
           filterable
           allow-create
@@ -70,8 +70,8 @@ export default {
   data() {
     return {
       value: '',
+      values: [],
       groupValue: '',
-      valueList: [],
       options: [
         {
           value: '选项1',

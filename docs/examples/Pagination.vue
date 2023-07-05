@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Pagination</h2>
+    <h2 id="Pagination">Pagination 分页</h2>
 
     <div class="example">
       <el-row>

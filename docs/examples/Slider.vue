@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Slider</h2>
+    <h2 id="Slider">Slider 滑块</h2>
 
     <div class="example">
       <el-row>
@@ -16,7 +16,7 @@
       </el-row>
 
       <el-row>
-        <el-slider v-model="range" range :marks="marks" />
+        <el-slider v-model="values" range :marks="marks" />
       </el-row>
     </div>
   </div>
@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       value: 10,
-      range: [30, 60],
+      values: [30, 60],
       marks: {
         0: '0°C',
         8: '8°C',

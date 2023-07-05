@@ -171,8 +171,10 @@
     }
 
     >.el-tabs__header .el-tabs__nav {
+      --ec-ignore-border: none;
+
       border: 1px solid $--border-color-light;
-      border-bottom: none;
+      border-bottom: var(--ec-ignore-border);
       border-radius: 4px 4px 0 0;
       box-sizing: border-box;
     }

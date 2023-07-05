@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Card</h2>
+    <h2 id="Card">Card 卡片</h2>
 
     <div class="example">
       <el-card shadow="hover">

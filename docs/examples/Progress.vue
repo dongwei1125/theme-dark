@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Progress</h2>
+    <h2 id="Progress">Progress 进度条</h2>
 
     <div class="example">
       <el-row>
@@ -68,12 +68,15 @@ export default {
   methods: {
     increase() {
       this.percentage += 10
+
       if (this.percentage > 100) {
         this.percentage = 100
       }
     },
+
     decrease() {
       this.percentage -= 10
+
       if (this.percentage < 0) {
         this.percentage = 0
       }

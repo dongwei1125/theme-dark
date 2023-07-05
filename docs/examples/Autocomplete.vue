@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Autocomplete</h2>
+    <h2 id="Autocomplete">Autocomplete 自动补全输入框</h2>
 
     <div class="example">
       <el-autocomplete v-model="value" :fetch-suggestions="querySearch" clearable placeholder="请输入" />

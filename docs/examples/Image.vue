@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h2>Image</h2>
+    <h2 id="Image">Image 图片</h2>
 
     <div class="example">
       <el-row>
-        <el-image :src="src" />
+        <el-image src="" />
       </el-row>
 
       <el-row>
-        <el-image style="width: 100px; height: 100px" :src="url" :preview-src-list="srcList" />
+        <el-image :src="src" :preview-src-list="srcList" />
       </el-row>
     </div>
   </div>
@@ -19,8 +19,7 @@ export default {
   name: 'Image',
   data() {
     return {
-      src: '',
-      url: 'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+      src: 'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
       srcList: [
         'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
         'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
@@ -34,3 +33,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.el-image {
+  width: 100px;
+  height: 100px;
+}
+</style>

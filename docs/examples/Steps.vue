@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Steps</h2>
+    <h2 id="Steps">Steps 步骤条</h2>
 
     <div class="example">
       <el-row>

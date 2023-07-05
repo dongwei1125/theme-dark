@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Table</h2>
+    <h2 id="Table">Table 表格</h2>
 
     <div class="example">
       <el-row>
@@ -18,6 +18,7 @@
           <el-table-column prop="date" label="日期" width="150" />
           <el-table-column label="配送信息">
             <el-table-column prop="name" label="姓名" width="120" />
+
             <el-table-column label="地址">
               <el-table-column prop="province" label="省份" width="120" />
               <el-table-column prop="city" label="市区" width="120" />
@@ -76,6 +77,7 @@
               </el-form>
             </template>
           </el-table-column>
+
           <el-table-column label="商品 ID" prop="id" />
           <el-table-column label="商品名称" prop="name" />
           <el-table-column label="描述" prop="desc" />

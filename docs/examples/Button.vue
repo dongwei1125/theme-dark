@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Button</h2>
+    <h2 id="Button">Button 按钮</h2>
 
     <div class="example">
       <el-row>

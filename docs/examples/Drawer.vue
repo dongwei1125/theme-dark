@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>Drawer</h2>
+    <h2 id="Drawer">Drawer 抽屉</h2>
 
     <div class="example">
-      <el-button type="primary" @click="drawer = true">点我打开</el-button>
+      <el-button type="primary" @click="visible = true">点我打开</el-button>
     </div>
 
-    <el-drawer title="我是标题" :visible.sync="drawer">
+    <el-drawer title="我是标题" :visible.sync="visible">
       <span>我来啦!</span>
     </el-drawer>
   </div>
@@ -17,7 +17,7 @@ export default {
   name: 'Drawer',
   data() {
     return {
-      drawer: false,
+      visible: false,
     }
   },
 }

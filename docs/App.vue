@@ -1,9 +1,10 @@
 <template>
-  <div class="index">
+  <div class="app">
     <div class="navbar">
       <h1>Element-theme-darkplus</h1>
 
       <div>
+        <header-search />
         <a href="https://github.com/dongwei1125/theme-dark" target="_black">GitHub</a>
         <a href="https://gitee.com/dongwei1125/theme-dark" target="_black">Gitee</a>
         <a href="https://www.npmjs.com/package/element-theme-darkplus" target="_black">NPM</a>
@@ -74,6 +75,8 @@
 <script>
 import { hasClass, addClass, removeClass } from './utils/dom.js'
 
+import HeaderSearch from './components/HeaderSearch.vue'
+
 import AlertExample from './examples/Alert.vue'
 import AutocompleteExample from './examples/Autocomplete.vue'
 import AvatarExample from './examples/Avatar.vue'
@@ -133,8 +136,9 @@ import UploadExample from './examples/Upload.vue'
 const ClassName = 'dark'
 
 export default {
-  name: 'Index',
+  name: 'App',
   components: {
+    HeaderSearch,
     AlertExample,
     AutocompleteExample,
     AvatarExample,

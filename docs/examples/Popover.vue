@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Popover</h2>
+    <h2 id="Popover">Popover 弹出框</h2>
 
     <div class="example">
       <el-popover

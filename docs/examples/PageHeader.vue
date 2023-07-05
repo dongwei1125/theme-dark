@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>PageHeader</h2>
+    <h2 id="PageHeader">PageHeader 页头</h2>
 
     <div class="example">
       <el-page-header content="详情" />

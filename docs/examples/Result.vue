@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Result</h2>
+    <h2 id="Result">Result 结果</h2>
 
     <div class="example">
       <el-row :gutter="12">

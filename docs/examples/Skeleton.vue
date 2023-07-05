@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Skeleton</h2>
+    <h2 id="Skeleton">Skeleton 骨架屏</h2>
 
     <div class="example">
       <el-row>

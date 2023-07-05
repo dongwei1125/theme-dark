@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Empty</h2>
+    <h2 id="Empty">Empty 空状态</h2>
 
     <div class="example">
       <el-empty />
