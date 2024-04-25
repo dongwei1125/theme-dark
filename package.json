@@ -1,11 +1,12 @@
 {
   "name": "element-theme-darkplus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Element component dark theme.",
   "main": "lib/index.css",
   "style": "lib/index.css",
   "files": [
-    "lib"
+    "lib",
+    "EXAMPLE.md"
   ],
   "scripts": {
     "build": "gulp build"
