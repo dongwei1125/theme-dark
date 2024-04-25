@@ -4,6 +4,10 @@
 
  - [Preview](https://dongwei1125.github.io/theme-dark)
 
+## Example
+
+ - [Example](/EXAMPLE.md)
+
 ## Installation
 
 ```shell
