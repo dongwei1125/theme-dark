@@ -4,29 +4,56 @@
 
     <div class="example">
       <el-row>
-        <el-progress :percentage="20" />
-        <el-progress :percentage="40" status="success" />
-        <el-progress :percentage="60" status="warning" />
-        <el-progress :percentage="80" status="exception" />
+        <el-progress :percentage="20" define-back-color="" text-color="" />
+        <el-progress :percentage="40" status="success" define-back-color="" text-color="" />
+        <el-progress :percentage="60" status="warning" define-back-color="" text-color="" />
+        <el-progress :percentage="80" status="exception" define-back-color="" text-color="" />
       </el-row>
 
       <el-row>
-        <el-progress :text-inside="true" :stroke-width="20" :percentage="20" />
-        <el-progress :text-inside="true" :stroke-width="20" :percentage="40" status="success" />
-        <el-progress :text-inside="true" :stroke-width="20" :percentage="60" status="warning" />
-        <el-progress :text-inside="true" :stroke-width="20" :percentage="80" status="exception" />
+        <el-progress
+          :text-inside="true"
+          :stroke-width="20"
+          :percentage="20"
+          define-back-color=""
+          text-color=""
+        />
+        <el-progress
+          :text-inside="true"
+          :stroke-width="20"
+          :percentage="40"
+          status="success"
+          define-back-color=""
+          text-color=""
+        />
+        <el-progress
+          :text-inside="true"
+          :stroke-width="20"
+          :percentage="60"
+          status="warning"
+          define-back-color=""
+          text-color=""
+        />
+        <el-progress
+          :text-inside="true"
+          :stroke-width="20"
+          :percentage="80"
+          status="exception"
+          define-back-color=""
+          text-color=""
+        />
       </el-row>
 
       <el-row>
-        <el-progress type="circle" :percentage="0" />
-        <el-progress type="circle" :percentage="25" />
-        <el-progress type="circle" :percentage="100" status="success" />
-        <el-progress type="circle" :percentage="70" status="warning" />
-        <el-progress type="circle" :percentage="50" status="exception" />
+        <el-progress type="circle" :percentage="0" text-color="" />
+        <el-progress type="circle" :percentage="25" text-color="" />
+        <el-progress type="circle" :percentage="100" status="success" text-color="" />
+        <el-progress type="circle" :percentage="70" status="warning" text-color="" />
+        <el-progress type="circle" :percentage="50" status="exception" text-color="" />
       </el-row>
 
       <el-row>
-        <el-progress type="dashboard" :percentage="percentage" />
+        <el-progress type="dashboard" :percentage="percentage" text-color="" />
 
         <div>
           <el-button-group>

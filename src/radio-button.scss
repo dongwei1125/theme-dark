@@ -8,8 +8,6 @@
   outline: none;
 
   @include e(inner) {
-    --ec-ignore-border: 0;
-
     display: inline-block;
     line-height: 1;
     white-space: nowrap;
@@ -17,7 +15,8 @@
     background: $--button-default-background-color;
     border: $--border-base;
     font-weight: $--button-font-weight;
-    border-left: var(--ec-ignore-border);
+    /* extract-color ignore */
+    border-left: 0;
     color: $--button-default-font-color;
     -webkit-appearance: none;
     text-align: center;
@@ -68,14 +67,13 @@
 
     &:disabled {
       &+.el-radio-button__inner {
-        --ec-ignore-bs: none;
-
         color: $--radio-disabled-checked-icon-color;
         cursor: not-allowed;
         background-image: none;
         background-color: $--button-disabled-background-color;
         border-color: $--button-disabled-border-color;
-        box-shadow: var(--ec-ignore-bs);
+        /* extract-color ignore */
+        box-shadow: none;
       }
 
       &:checked+.el-radio-button__inner {

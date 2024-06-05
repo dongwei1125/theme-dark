@@ -20,9 +20,8 @@
   }
 
   @include e(body) {
-    --ec-ignore-color: unset;
-
-    color: var(--ec-ignore-color);
+    /* extract-color ignore */
+    color: unset;
     background-color: transparent;
 
     .el-descriptions__table {

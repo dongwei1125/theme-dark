@@ -1,4 +1,4 @@
-const { series, src, dest } = require('gulp')
+const { src, dest, parallel } = require('gulp')
 const dartSass = require('sass')
 const gulpSass = require('gulp-sass')
 const sass = gulpSass(dartSass)
@@ -15,21 +15,28 @@ const {
   outputDir,
   outputFontDir,
   outputColorDir,
-  outputCssExt,
-  wrapSelector,
+  outputColorSuffix,
+  cssWrapSelector,
   extractColorKeywords,
 } = require('./theme.config')
 
-function compile() {
+function compileCss() {
   return src(scssSrc)
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer({ cascade: false }))
-    .pipe(cssWrap({ selector: wrapSelector }))
+    .pipe(cssWrap({ selector: cssWrapSelector }))
     .pipe(cleanCss())
     .pipe(dest(outputDir))
+}
+
+function compileColorCss() {
+  return src(scssSrc)
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(autoprefixer({ cascade: false }))
+    .pipe(cssWrap({ selector: cssWrapSelector }))
     .pipe(extractColor({ keywords: extractColorKeywords }))
     .pipe(cleanCss())
-    .pipe(rename(path => (path.basename += `.${outputCssExt}`)))
+    .pipe(rename({ suffix: outputColorSuffix }))
     .pipe(dest(outputColorDir))
 }
 
@@ -37,4 +44,4 @@ function copyfont() {
   return src(fontSrc).pipe(dest(outputFontDir))
 }
 
-exports.build = series(compile, copyfont)
+exports.build = parallel(compileCss, compileColorCss, copyfont)

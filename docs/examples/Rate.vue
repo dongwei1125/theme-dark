@@ -5,16 +5,16 @@
     <div class="example">
       <el-row :gutter="12">
         <el-col :span="6">
-          <el-rate v-model="value" />
+          <el-rate v-model="value" void-color="" />
         </el-col>
         <el-col :span="6">
-          <el-rate v-model="value" :colors="colors" />
+          <el-rate v-model="value" :colors="colors" void-color="" />
         </el-col>
       </el-row>
 
       <el-row :gutter="12">
         <el-col :span="6">
-          <el-rate v-model="value" show-text text-color="#ff9900" />
+          <el-rate v-model="value" show-text void-color="" text-color="" />
         </el-col>
         <el-col :span="6">
           <el-rate
@@ -22,10 +22,18 @@
             :colors="colors"
             void-icon-class="el-icon-cloudy"
             :icon-classes="iconClasses"
+            void-color=""
           />
         </el-col>
         <el-col :span="6">
-          <el-rate v-model="value" disabled show-score score-template="{value}" />
+          <el-rate
+            v-model="value"
+            disabled
+            show-score
+            score-template="{value}"
+            disabled-void-color=""
+            text-color=""
+          />
         </el-col>
       </el-row>
 

@@ -14,13 +14,11 @@ function cssWrap(options = {}) {
       return callback(new PluginError(PLUGIN_NAME, 'Streaming not supported'))
     }
 
-    var contents = ''
+    var fileContents = file.contents.toString()
 
-    try {
-      contents = wrap(file.contents.toString(), options)
-    } catch { } // eslint-disable-line
-
-    file.contents = new Buffer.from(contents)
+    if (fileContents) {
+      file.contents = new Buffer.from(wrap(fileContents, options))
+    }
 
     callback(null, file)
   })

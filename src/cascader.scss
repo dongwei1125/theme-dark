@@ -111,10 +111,9 @@
       }
 
       .el-icon-close {
-        --ec-ignore-bc: unset;
-
         flex: none;
-        background-color: var(--ec-ignore-bc);
+        /* extract-color ignore */
+        background-color: unset;
         color: $--color-info;
 
         &:hover {

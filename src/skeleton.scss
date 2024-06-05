@@ -3,13 +3,12 @@
 @import "./skeleton-item.scss";
 
 @mixin skeleton-color() {
-  --ec-ignore-bs: 400% 100%;
-
   background: linear-gradient(90deg,
       $--skeleton-color 25%,
       $--skeleton-to-color 37%,
       $--skeleton-color 63%);
-  background-size: var(--ec-ignore-bs);
+  /* extract-color ignore */
+  background-size: 400% 100%;
   animation: #{$namespace}-skeleton-loading 1.4s ease infinite;
 }
 

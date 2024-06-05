@@ -9,38 +9,34 @@
 
   <script src="https://unpkg.com/vue@2.5.17/dist/vue.min.js"></script>
   <script src="https://unpkg.com/vue3-sfc-loader@0.8.4/dist/vue2-sfc-loader.js"></script>
-  <script src="https://unpkg.com/element-ui@2.15.13/lib/index.js"></script>
+  <script src="https://unpkg.com/element-ui@2.15.14/lib/index.js"></script>
   <script src="https://unpkg.com/fuse.js@6.6.2/dist/fuse.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.13/lib/theme-chalk/index.css">
   <link rel="stylesheet" href="https://unpkg.com/element-theme-darkplus/lib/index.color.css">
 
   <style>
-    html {
-      --border-color: #dcdfe6;
-      --bg-color: #ffffff;
-      --el-text-color: #606266;
-    }
-
-    .dark {
-      --border-color: #4c4d4f;
-      --bg-color: #141414;
-      --el-text-color: #cfd3dc;
-      --text-color: #e5eaf3;
-    }
-
     body {
       min-width: 350px;
       min-height: 100vh;
       margin: 0;
-      color: var(--text-color);
-      background-color: var(--bg-color);
+      color: #303133;
+      background-color: #ffffff;
       transition: background-color 0.2s;
+    }
+
+    html.dark body {
+      color: #e5eaf3;
+      background-color: #141414;
     }
 
     .example {
       padding: 24px;
-      border: 1px solid var(--border-color);
+      border: 1px solid #dcdfe6;
       border-radius: 4px;
+    }
+
+    html.dark .example {
+      border: 1px solid #4c4d4f;
     }
 
     .el-row {
@@ -66,11 +62,11 @@
     html::-webkit-scrollbar-thumb {
       background-color: #0003;
       border-radius: 10px;
-      transition: all .2s ease-in-out
+      transition: all .2s ease-in-out;
+      cursor: pointer;
     }
 
     html::-webkit-scrollbar-thumb:hover {
-      cursor: pointer;
       background-color: #0000004d
     }
 

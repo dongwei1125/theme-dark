@@ -276,10 +276,10 @@
 
   // table--border
   @include m(border) {
-    --ec-ignore-border: none;
-
-    border-right: var(--ec-ignore-border);
-    border-bottom: var(--ec-ignore-border);
+    /* extract-color ignore */
+    border-right: none;
+    /* extract-color ignore */
+    border-bottom: none;
 
     &.el-loading-parent--relative {
       border-color: transparent;

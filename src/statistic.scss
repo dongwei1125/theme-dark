@@ -2,15 +2,14 @@
 @import "common/var";
 
 @include b(statistic) {
-  --ec-ignore-color: unset;
-
   $statistic-justify: center;
   $statistic-align: center;
   width: 100%;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: var(--ec-ignore-color);
+  /* extract-color ignore */
+  color: unset;
   font-variant: tabular-nums;
   list-style: none;
   font-feature-settings: "tnum";

@@ -134,9 +134,8 @@
     align-items: center;
 
     &__close.el-icon-close {
-      --ec-ignore-bg: unset;
-
-      background-color: var(--ec-ignore-bg);
+      /* extract-color ignore */
+      background-color: unset;
       top: 0;
       color: $--color-white;
       flex-shrink: 0;

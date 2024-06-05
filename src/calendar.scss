@@ -14,9 +14,8 @@
   }
 
   @include e(title) {
-    --ec-ignore-color: unset;
-
-    color: var(--ec-ignore-color);
+    /* extract-color ignore */
+    color: unset;
     align-self: center;
   }
 

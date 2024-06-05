@@ -1,1 +1,1 @@
-.dark .el-popconfirm__main{display:flex;align-items:center}.dark .el-popconfirm__icon{margin-right:5px}.dark .el-popconfirm__action{text-align:right;margin:0}
+.dark .el-popconfirm__main{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.dark .el-popconfirm__icon{margin-right:5px}.dark .el-popconfirm__action{text-align:right;margin:0}
