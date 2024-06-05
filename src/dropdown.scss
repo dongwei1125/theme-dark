@@ -18,16 +18,14 @@
   }
 
   & .el-dropdown__caret-button {
-    --ec-ignore-bl: none;
-
     padding-left: 5px;
     padding-right: 5px;
     position: relative;
-    border-left: var(--ec-ignore-bl);
+    /* extract-color ignore */
+    border-left: none;
 
     &::before {
       $gap: 5px;
-      --ec-ignore-opacity: 0.5;
 
       content: '';
       position: absolute;
@@ -36,7 +34,8 @@
       top: $gap;
       bottom: $gap;
       left: 0;
-      opacity: var(--ec-ignore-opacity);
+      /* extract-color ignore */
+      opacity: 0.5;
       background: $--border-color-base;
     }
 

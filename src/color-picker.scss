@@ -129,11 +129,10 @@
 }
 
 @include b(color-alpha-slider) {
-  --ec-ignore-bg-size: 12px 12px;
-  --ec-ignore-bg-pst: 0 0, 6px 0, 6px -6px, 0 6px;
-
-  background-size: var(--ec-ignore-bg-size);
-  background-position: var(--ec-ignore-bg-pst);
+  /* extract-color ignore */
+  background-size: 12px 12px;
+  /* extract-color ignore */
+  background-position: 0 0, 6px 0, 6px -6px, 0 6px;
   position: relative;
   box-sizing: border-box;
   width: 280px;
@@ -344,11 +343,10 @@
     text-align: center;
 
     @include when(alpha) {
-      --ec-ignore-bg-size: 12px 12px;
-      --ec-ignore-bg-pst: 0 0, 6px 0, 6px -6px, 0 6px;
-
-      background-size: var(--ec-ignore-bg-size);
-      background-position: var(--ec-ignore-bg-pst);
+      /* extract-color ignore */
+      background-size: 12px 12px;
+      /* extract-color ignore */
+      background-position: 0 0, 6px 0, 6px -6px, 0 6px;
       background-image: linear-gradient(45deg, #333 25%, transparent 25%),
         linear-gradient(135deg, #333 25%, transparent 25%),
         linear-gradient(45deg, transparent 75%, #333 75%),

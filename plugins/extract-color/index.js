@@ -1,4 +1,4 @@
-const cssExtractor = require('webpack-theme-color-replacer/src/CssExtractor')
+const cssExtractor = require('./CssExtractor')
 const { obj } = require('through2')
 
 const PLUGIN_NAME = 'extract-color'

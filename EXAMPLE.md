@@ -9,18 +9,18 @@
   <title>Example</title>
 
   <script src="https://unpkg.com/vue@2.5.17/dist/vue.min.js"></script>
-  <script src="https://unpkg.com/element-ui@2.15.13/lib/index.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.13/lib/theme-chalk/button.css">
+  <script src="https://unpkg.com/element-ui@2.15.14/lib/index.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.14/lib/theme-chalk/button.css">
   <link rel="stylesheet" href="https://unpkg.com/element-theme-darkplus/lib/button.color.css">
 
   <style>
     html {
-      background: #ffffff;
+      background-color: #ffffff;
     }
 
-    .dark {
+    html.dark {
       background: #141414;
-      transition: background 0.2s;
+      transition: background-color 0.2s;
     }
 
     body {

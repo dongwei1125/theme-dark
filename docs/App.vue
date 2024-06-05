@@ -234,14 +234,19 @@ export default {
   right: 0;
   top: 0;
   padding: 0 26px 0 32px;
-  border-bottom: 1px solid var(--border-color);
-  background-image: radial-gradient(transparent 1px, var(--bg-color) 1px);
+  border-bottom: 1px solid #dcdfe6;
+  background-image: radial-gradient(transparent 1px, #ffffff 1px);
   background-size: 4px 4px;
   backdrop-filter: saturate(50%) blur(4px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 12;
+}
+
+html.dark .navbar {
+  border-bottom: 1px solid #4c4d4f;
+  background-image: radial-gradient(transparent 1px, #141414 1px);
 }
 
 .navbar h1 {
@@ -273,6 +278,10 @@ export default {
 .content >>> h2 {
   margin: 0;
   padding: 70px 0 15px;
-  color: var(--el-text-color);
+  color: #606266;
+}
+
+html.dark .content >>> h2 {
+  color: #cfd3dc;
 }
 </style>

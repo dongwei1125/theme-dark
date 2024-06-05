@@ -4,7 +4,15 @@ module.exports = {
   outputDir: './lib',
   outputFontDir: './lib/fonts',
   outputColorDir: './lib',
-  outputCssExt: 'color',
-  wrapSelector: '.dark', // css-wrap
-  extractColorKeywords: ['--ec-ignore-', '#', 'rgb', 'transparent', 'background:0 0'], // extract-color
+  outputColorSuffix: '.color',
+  cssWrapSelector: '.dark', // css-wrap
+  // extract-color
+  extractColorKeywords: [
+    '/* extract-color ignore */',
+    '#',
+    'rgb',
+    'transparent',
+    'color: white',
+    'background: none',
+  ],
 }

@@ -21,9 +21,8 @@
   }
 
   i {
-    --ec-ignore-color: inherit;
-
-    color: var(--ec-ignore-color);
+    /* extract-color ignore */
+    color: inherit;
   }
 
   &:hover,
@@ -53,9 +52,8 @@
   }
 
   @include m(horizontal) {
-    --ec-ignore-br: none;
-
-    border-right: var(--ec-ignore-br);
+    /* extract-color ignore */
+    border-right: none;
 
     &>.el-menu-item {
       float: left;
@@ -201,11 +199,10 @@
   }
 
   @include m(popup) {
-    --ec-ignore-border: none;
-
     z-index: 100;
     min-width: 200px;
-    border: var(--ec-ignore-border);
+    /* extract-color ignore */
+    border: none;
     padding: 5px 0;
     border-radius: $--border-radius-small;
     box-shadow: $--box-shadow-light;
@@ -256,9 +253,8 @@
   }
 
   & .el-menu {
-    --ec-ignore-border: none;
-
-    border: var(--ec-ignore-border);
+    /* extract-color ignore */
+    border: none;
   }
 
   & .el-menu-item {

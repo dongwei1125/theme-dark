@@ -366,11 +366,10 @@
       }
 
       .el-upload-list__item-delete {
-        --ec-ignore-color: inherit;
-
         position: static;
         font-size: inherit;
-        color: var(--ec-ignore-color);
+        /* extract-color ignore */
+        color: inherit;
       }
 
       &:hover {
