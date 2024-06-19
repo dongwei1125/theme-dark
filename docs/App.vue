@@ -201,12 +201,15 @@ export default {
     }
   },
   watch: {
-    dark(value) {
-      if (value) {
-        this.open()
-      } else {
-        this.close()
-      }
+    dark: {
+      handler(value) {
+        if (value) {
+          this.open()
+        } else {
+          this.close()
+        }
+      },
+      immediate: true,
     },
   },
   methods: {
