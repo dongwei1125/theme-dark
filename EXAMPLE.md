@@ -66,8 +66,11 @@
         }
       },
       watch: {
-        dark(value) {
-          value ? this.open() : this.close()
+        dark: {
+          handler(value) {
+            value ? this.open() : this.close()
+          },
+          immediate: true,
         },
       },
       methods: {
