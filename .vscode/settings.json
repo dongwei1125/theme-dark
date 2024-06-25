@@ -3,7 +3,7 @@
   "editor.lineHeight": 24,
   "vetur.validation.template": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
+    "source.fixAll.eslint": "always"
   },
   "editor.formatOnSave": true,
 }
