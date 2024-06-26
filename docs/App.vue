@@ -8,7 +8,7 @@
         <a href="https://github.com/dongwei1125/theme-dark" target="_black">GitHub</a>
         <a href="https://gitee.com/dongwei1125/theme-dark" target="_black">Gitee</a>
         <a href="https://www.npmjs.com/package/element-theme-darkplus" target="_black">NPM</a>
-        <el-switch v-model="dark" />
+        <theme-toggle />
       </div>
     </div>
 
@@ -73,9 +73,8 @@
 </template>
 
 <script>
-import { hasClass, addClass, removeClass } from './utils/dom.js'
-
 import HeaderSearch from './components/HeaderSearch.vue'
+import ThemeToggle from './components/ThemeToggle.vue'
 
 import AlertExample from './examples/Alert.vue'
 import AutocompleteExample from './examples/Autocomplete.vue'
@@ -133,12 +132,11 @@ import TransferExample from './examples/Transfer.vue'
 import TreeExample from './examples/Tree.vue'
 import UploadExample from './examples/Upload.vue'
 
-const ClassName = 'dark'
-
 export default {
   name: 'App',
   components: {
     HeaderSearch,
+    ThemeToggle,
     AlertExample,
     AutocompleteExample,
     AvatarExample,
@@ -194,36 +192,6 @@ export default {
     TransferExample,
     TreeExample,
     UploadExample,
-  },
-  data() {
-    return {
-      dark: false,
-    }
-  },
-  watch: {
-    dark: {
-      handler(value) {
-        if (value) {
-          this.open()
-        } else {
-          this.close()
-        }
-      },
-      immediate: true,
-    },
-  },
-  methods: {
-    open() {
-      const withoutClassName = !hasClass(document.documentElement, ClassName)
-
-      if (withoutClassName) {
-        addClass(document.documentElement, ClassName)
-      }
-    },
-
-    close() {
-      removeClass(document.documentElement, ClassName)
-    },
   },
 }
 </script>

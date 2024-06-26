@@ -1,5 +1,5 @@
 export function insertStyleElement(content) {
-  if (typeof document === 'undefined') return
+  if (typeof window === 'undefined') return
 
   const style = document.createElement('style')
 
