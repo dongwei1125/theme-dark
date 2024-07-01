@@ -1,7 +1,7 @@
-import { insertStyleElement } from './utils'
-import { cssWrapSelector } from '../../theme.config'
+import { insertStyleElement } from '../../utils'
+import { cssWrap } from '../../../theme.config'
 
-const style = `.el-progress-circle__track{stroke:#ebeef5}${cssWrapSelector} .el-progress-circle__track{stroke:#262727}`
+const style = `.el-progress-circle__track{stroke:#ebeef5}${cssWrap.selector} .el-progress-circle__track{stroke:#262727}`
 
 export default Progress => {
   insertStyleElement(style)

@@ -6,23 +6,3 @@
     />
   </svg>
 </template>
-
-<script>
-export default {
-  name: 'Dark',
-}
-</script>
-
-<style scoped>
-svg {
-  height: 1em;
-  width: 1em;
-  line-height: 1em;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  fill: currentColor;
-  font-size: inherit;
-}
-</style>

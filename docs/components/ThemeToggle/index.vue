@@ -1,40 +1,26 @@
 <template>
-  <div class="theme-toggle" @click="switchTheme">
-    <theme-switch v-model="dark" :before-change="beforeChange" />
+  <div class="theme-toggle" @click.stop="switchTheme">
+    <theme-switch v-model="isDark" :before-change="beforeChange" />
   </div>
 </template>
 
 <script>
-import { hasClass, addClass, removeClass } from '../utils/dom.js'
+import dark from './dark/index.js'
 
-import ThemeSwitch from './ThemeSwitch/index.vue'
-
-const ClassName = 'dark'
+import ThemeSwitch from '../ThemeSwitch/index.vue'
 
 export default {
   name: 'ThemeToggle',
   components: { ThemeSwitch },
+  mixins: [dark],
   data() {
     return {
-      dark: false,
       resolve: null,
       beforeChange: () =>
         new Promise(resolve => {
           this.resolve = resolve
         }),
     }
-  },
-  watch: {
-    dark: {
-      handler(value) {
-        if (value) {
-          this.open()
-        } else {
-          this.close()
-        }
-      },
-      immediate: true,
-    },
   },
   methods: {
     switchTheme(event) {
@@ -56,27 +42,15 @@ export default {
 
         document.documentElement.animate(
           {
-            clipPath: this.dark ? [...clipPath].reverse() : clipPath,
+            clipPath: this.isDark ? [...clipPath].reverse() : clipPath,
           },
           {
             duration: 400,
             easing: 'ease-in',
-            pseudoElement: this.dark ? '::view-transition-old(root)' : '::view-transition-new(root)',
+            pseudoElement: this.isDark ? '::view-transition-old(root)' : '::view-transition-new(root)',
           }
         )
       })
-    },
-
-    open() {
-      const withoutClassName = !hasClass(document.documentElement, ClassName)
-
-      if (withoutClassName) {
-        addClass(document.documentElement, ClassName)
-      }
-    },
-
-    close() {
-      removeClass(document.documentElement, ClassName)
     },
   },
 }

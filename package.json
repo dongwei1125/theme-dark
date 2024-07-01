@@ -6,11 +6,12 @@
   "style": "lib/index.css",
   "files": [
     "lib",
+    "utils",
     "EXAMPLE.md"
   ],
   "scripts": {
-    "build": "gulp build",
-    "build:darken": "rollup -c darken/rollup.config.js"
+    "build:css": "gulp build",
+    "build:scripts": "rollup -c scripts/rollup.config.js"
   },
   "repository": {
     "type": "git",

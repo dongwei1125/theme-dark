@@ -74,7 +74,7 @@
 
 <script>
 import HeaderSearch from './components/HeaderSearch.vue'
-import ThemeToggle from './components/ThemeToggle.vue'
+import ThemeToggle from './components/ThemeToggle/index.vue'
 
 import AlertExample from './examples/Alert.vue'
 import AutocompleteExample from './examples/Autocomplete.vue'
