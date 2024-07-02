@@ -5,10 +5,10 @@
 
       <div>
         <header-search />
-        <a href="https://github.com/dongwei1125/theme-dark" target="_black">GitHub</a>
-        <a href="https://gitee.com/dongwei1125/theme-dark" target="_black">Gitee</a>
-        <a href="https://www.npmjs.com/package/element-theme-darkplus" target="_black">NPM</a>
-        <el-switch v-model="dark" />
+        <theme-toggle />
+        <git-hub />
+        <gitee />
+        <npm />
       </div>
     </div>
 
@@ -73,9 +73,11 @@
 </template>
 
 <script>
-import { hasClass, addClass, removeClass } from './utils/dom.js'
-
 import HeaderSearch from './components/HeaderSearch.vue'
+import ThemeToggle from './components/ThemeToggle/index.vue'
+import GitHub from './components/GitHub.vue'
+import Gitee from './components/Gitee.vue'
+import Npm from './components/Npm.vue'
 
 import AlertExample from './examples/Alert.vue'
 import AutocompleteExample from './examples/Autocomplete.vue'
@@ -133,12 +135,14 @@ import TransferExample from './examples/Transfer.vue'
 import TreeExample from './examples/Tree.vue'
 import UploadExample from './examples/Upload.vue'
 
-const ClassName = 'dark'
-
 export default {
   name: 'App',
   components: {
     HeaderSearch,
+    GitHub,
+    Gitee,
+    Npm,
+    ThemeToggle,
     AlertExample,
     AutocompleteExample,
     AvatarExample,
@@ -195,48 +199,18 @@ export default {
     TreeExample,
     UploadExample,
   },
-  data() {
-    return {
-      dark: false,
-    }
-  },
-  watch: {
-    dark: {
-      handler(value) {
-        if (value) {
-          this.open()
-        } else {
-          this.close()
-        }
-      },
-      immediate: true,
-    },
-  },
-  methods: {
-    open() {
-      const withoutClassName = !hasClass(document.documentElement, ClassName)
-
-      if (withoutClassName) {
-        addClass(document.documentElement, ClassName)
-      }
-    },
-
-    close() {
-      removeClass(document.documentElement, ClassName)
-    },
-  },
 }
 </script>
 
 <style scoped>
 .navbar {
   height: 55px;
-  line-height: 55px;
   position: sticky;
   left: 0;
   right: 0;
   top: 0;
-  padding: 0 26px 0 32px;
+  padding: 0 32px;
+  color: #303133;
   border-bottom: 1px solid #dcdfe6;
   background-image: radial-gradient(transparent 1px, #ffffff 1px);
   background-size: 4px 4px;
@@ -248,6 +222,7 @@ export default {
 }
 
 html.dark .navbar {
+  color: #e5eaf3;
   border-bottom: 1px solid #4c4d4f;
   background-image: radial-gradient(transparent 1px, #141414 1px);
 }
@@ -260,13 +235,22 @@ html.dark .navbar {
   font-family: 'Segoe UI';
 }
 
+.navbar > div {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .theme-toggle {
+  padding: 0 12px;
+}
+
 .navbar a {
   display: inline-block;
   height: 100%;
   padding: 0 12px;
   font-size: 15px;
   font-weight: bold;
-  color: #409eff;
+  color: currentColor;
   text-decoration: none;
 }
 

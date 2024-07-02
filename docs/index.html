@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Docs</title>
+  <title>Element-theme-darkplus - Element 暗黑主题</title>
+  <meta name="description" content="Element-theme-darkplus，一套基于 Element 最新版 2.15.14 的主题库">
+  <link rel="shortcut icon" href="favicon.ico">
 
   <script src="https://unpkg.com/vue@2.5.17/dist/vue.min.js"></script>
   <script src="https://unpkg.com/vue3-sfc-loader@0.8.4/dist/vue2-sfc-loader.js"></script>
   <script src="https://unpkg.com/element-ui@2.15.14/lib/index.js"></script>
   <script src="https://unpkg.com/fuse.js@6.6.2/dist/fuse.min.js"></script>
+  <script src="https://unpkg.com/element-theme-darkplus/utils/darken.js"></script>
+  <script src="https://unpkg.com/element-theme-darkplus/utils/dark-mode.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.14/lib/theme-chalk/index.css">
   <link rel="stylesheet" href="https://unpkg.com/element-theme-darkplus/lib/index.color.css">
 
@@ -37,6 +40,10 @@
 
     html.dark .example {
       border: 1px solid #4c4d4f;
+    }
+
+    #app {
+      height: 100vh;
     }
 
     .el-row {
@@ -80,37 +87,35 @@
   </style>
 
   <style>
-    .first-loading-wrp {
+    .loading-wrap {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      min-height: 420px;
       height: 100%;
       font-family: 'Segoe UI';
     }
 
-    .first-loading-wrp>h1 {
+    .loading-wrap>h1 {
       color: #409eff;
       font-size: 80px;
+      margin-top: 0;
     }
 
-    .first-loading-wrp .loading-wrp {
+    .loading-wrap .loading {
       padding: 98px;
       display: flex;
       justify-content: center;
-      align-items: center
+      align-items: center;
     }
 
     .dot {
-      animation: antRotate 1.2s infinite linear;
-      transform: rotate(45deg);
-      position: relative;
-      display: inline-block;
-      font-size: 32px;
       width: 32px;
       height: 32px;
-      box-sizing: border-box
+      font-size: 32px;
+      transform: rotate(45deg);
+      position: relative;
+      animation: spin 1.2s infinite linear;
     }
 
     .dot i {
@@ -120,74 +125,70 @@
       display: block;
       background-color: #409eff;
       border-radius: 100%;
-      transform: scale(.75);
+      transform: scale(0.75);
       transform-origin: 50% 50%;
-      opacity: .3;
-      animation: antSpinMove 1s infinite linear alternate
+      opacity: 0.3;
+      animation: blink 1s infinite linear alternate;
     }
 
     .dot i:nth-child(1) {
       top: 0;
-      left: 0
+      left: 0;
     }
 
     .dot i:nth-child(2) {
       top: 0;
       right: 0;
-      -webkit-animation-delay: .4s;
-      animation-delay: .4s
+      animation-delay: 0.4s;
     }
 
     .dot i:nth-child(3) {
       right: 0;
       bottom: 0;
-      -webkit-animation-delay: .8s;
-      animation-delay: .8s
+      animation-delay: 0.8s;
     }
 
     .dot i:nth-child(4) {
       bottom: 0;
       left: 0;
-      -webkit-animation-delay: 1.2s;
-      animation-delay: 1.2s
+      animation-delay: 1.2s;
     }
 
-    @keyframes antRotate {
+    @keyframes spin {
       to {
-        -webkit-transform: rotate(405deg);
-        transform: rotate(405deg)
+        transform: rotate(405deg);
       }
     }
 
-    @-webkit-keyframes antRotate {
+    @keyframes blink {
       to {
-        -webkit-transform: rotate(405deg);
-        transform: rotate(405deg)
+        opacity: 1;
       }
     }
 
-    @keyframes antSpinMove {
-      to {
-        opacity: 1
-      }
-    }
-
-    @-webkit-keyframes antSpinMove {
-      to {
-        opacity: 1
-      }
+    .loading-wrap .copyright {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   </style>
 </head>
 
 <body>
   <div id="app">
-    <div class="first-loading-wrp">
+    <div class="loading-wrap">
       <h1>Element-theme-darkplus</h1>
-      <div class="loading-wrp">
-        <span class="dot dot-spin"><i></i><i></i><i></i><i></i></span>
+
+      <div class="loading">
+        <span class="dot">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
       </div>
-      <div style="display: flex; justify-content: center; align-items: center;">Powered by dongwei</div>
+
+      <div class="copyright">Powered by dongwei</div>
     </div>
   </div>
 

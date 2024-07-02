@@ -1,0 +1,1 @@
+!function(){"use strict";var e,a,t=localStorage.getItem("".concat("el-theme-appearance")),c=null===(e=(a=window).matchMedia)||void 0===e?void 0:e.call(a,"(prefers-color-scheme: dark)"),o=(null==c?void 0:c.matches)||!1;("auto"===t?o:"dark"===t)&&document.documentElement.classList.add("dark")}();

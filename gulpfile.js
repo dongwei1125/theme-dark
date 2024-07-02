@@ -15,16 +15,16 @@ const {
   outputDir,
   outputFontDir,
   outputColorDir,
-  outputColorSuffix,
-  cssWrapSelector,
-  extractColorKeywords,
+  outputColorSuffix: suffix,
+  cssWrap: { selector },
+  extractColor: { keywords, ignoreSpecialComments },
 } = require('./theme.config')
 
 function compileCss() {
   return src(scssSrc)
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer({ cascade: false }))
-    .pipe(cssWrap({ selector: cssWrapSelector }))
+    .pipe(cssWrap({ selector }))
     .pipe(cleanCss())
     .pipe(dest(outputDir))
 }
@@ -33,10 +33,10 @@ function compileColorCss() {
   return src(scssSrc)
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer({ cascade: false }))
-    .pipe(cssWrap({ selector: cssWrapSelector }))
-    .pipe(extractColor({ keywords: extractColorKeywords }))
+    .pipe(cssWrap({ selector }))
+    .pipe(extractColor({ keywords, ignoreSpecialComments }))
     .pipe(cleanCss())
-    .pipe(rename({ suffix: outputColorSuffix }))
+    .pipe(rename({ suffix }))
     .pipe(dest(outputColorDir))
 }
 

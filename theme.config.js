@@ -5,14 +5,15 @@ module.exports = {
   outputFontDir: './lib/fonts',
   outputColorDir: './lib',
   outputColorSuffix: '.color',
-  cssWrapSelector: '.dark', // css-wrap
-  // extract-color
-  extractColorKeywords: [
-    '/* extract-color ignore */',
-    '#',
-    'rgb',
-    'transparent',
-    'color: white',
-    'background: none',
-  ],
+  cssWrap: {
+    selector: '.dark',
+  },
+  extractColor: {
+    keywords: ['#', 'rgb', 'transparent', 'color: white', 'background: none'],
+    ignoreSpecialComments: false,
+  },
+  scripts: {
+    outputDir: 'utils',
+    storageKey: 'el-theme-appearance',
+  },
 }
