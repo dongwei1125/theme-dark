@@ -329,7 +329,8 @@ export default {
 
 <style scoped>
 .header-search {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 0 12px;
   cursor: pointer;
 }
@@ -342,6 +343,7 @@ export default {
 
 .el-select {
   width: 0;
+  margin-left: 4px;
   transition: width 0.2s;
   overflow: hidden;
   vertical-align: middle;

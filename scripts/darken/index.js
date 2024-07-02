@@ -6,21 +6,21 @@ const constructors = {
   ElRate: RateConstructor,
 }
 
-const darken = component => {
+const Darken = component => {
   if (!component) return
 
-  /** Vue.use(darken(ElementUI)) */
+  /** Vue.use(Darken(ElementUI)) */
   if (component.Progress || component.Rate) {
     return install(component)
   }
 
   const name = component.name
 
-  /** Vue.component(Progress.name, darken(Progress)) */
+  /** Vue.component(Progress.name, Darken(Progress)) */
   if (constructors[name]) {
     const constructor = constructors[name](component)
 
-    /** Vue.use(darken(Progress)) */
+    /** Vue.use(Darken(Progress)) */
     constructor.install = Vue => {
       Vue.component(component.name, constructor)
     }
@@ -35,13 +35,13 @@ const install = ElementUI => ({
     const components = [Progress, Rate]
 
     components.forEach(component => {
-      darken(component)?.install(Vue)
+      Darken(component)?.install(Vue)
     })
   },
 })
 
 if (typeof window !== 'undefined' && window.Vue && window.ELEMENT) {
-  darken(window.ELEMENT)?.install(window.Vue)
+  Darken(window.ELEMENT)?.install(window.Vue)
 }
 
-export default darken
+export default Darken
