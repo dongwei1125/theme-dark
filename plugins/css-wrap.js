@@ -14,10 +14,10 @@ function cssWrap(options = {}) {
       return callback(new PluginError(PLUGIN_NAME, 'Streaming not supported'))
     }
 
-    var fileContents = file.contents.toString()
+    var contents = file.contents.toString()
 
-    if (fileContents) {
-      file.contents = new Buffer.from(wrap(fileContents, options))
+    if (contents) {
+      file.contents = new Buffer.from(wrap(contents, options))
     }
 
     callback(null, file)

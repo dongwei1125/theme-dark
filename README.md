@@ -1,6 +1,6 @@
-<h1 style="color: #409eff; text-align: center; font-size: 50px">Element-theme-darkplus</h1>
+<h1 align="center">Element-theme-darkplus</h1>
 
-<p style='text-align: center'>
+<p align="center">
   <a href="https://github.com/ElemeFE/element">
     <img src="https://img.shields.io/badge/element--ui-2.15.14-blue.svg" alt="element-ui" />
   </a>
@@ -36,7 +36,7 @@ npm i element-theme-darkplus -S
 ## 引入
 
 ```javascript
-// webpack
+// Webpack
 import 'element-theme-darkplus/lib/index.css';
 
 // CDN
@@ -46,6 +46,7 @@ import 'element-theme-darkplus/lib/index.css';
 ## 部分引入
 
 ```javascript
+// Webpack
 import 'element-theme-darkplus/lib/input.css';
 
 // CDN
@@ -54,7 +55,7 @@ import 'element-theme-darkplus/lib/input.css';
 
 ## 切换式
 
-如果你准备了一套白垩主题，一套暗黑主题，两种主题自由切换，那么此方式最适合你。
+如果你准备了一套白垩主题，一套暗黑主题，两种主题自由切换，那么以下最适合你。
 
 ```javascript
 import 'element-ui/lib/theme-chalk/index.css';
@@ -70,7 +71,7 @@ import `element-theme-darkplus/lib/input.color.css`;
 
 ## 高级
 
-评分组件 [Rate](https://github.com/ElemeFE/element/blob/master/packages/rate/src/main.vue) 较为特殊，`Element`内部与颜色相关的`props`均定义了默认值，且`template`模板中都采用内联样式，导致外部主题样式无法覆盖。
+评分组件 [Rate](https://github.com/ElemeFE/element/blob/master/packages/rate/src/main.vue) 较为特殊，`Element`内部与颜色相关`props`均定义了默认值，且`template`模板中都采用内联样式，导致外部主题样式无法覆盖。
 
 | `Props` | `默认值` |
 | --- | --- |
@@ -78,7 +79,7 @@ import `element-theme-darkplus/lib/input.color.css`;
 | `disabled-void-color` | `#eff2f7` |
 | `text-color` | `#1f2d3d` |
 
-可传空值重置相应的`props`值使主题生效。
+可传空值重置相应`props`值使主题生效。
 
 ```html
 <el-rate :value="3" show-text void-color="" text-color="" />
@@ -97,9 +98,9 @@ import `element-theme-darkplus/lib/input.color.css`;
 
 虽然两组件可以传空值重置属性以支持暗黑主题，而对于不关心此功能的同学，却不清楚为什么会传入诸如`text-color=""`这样的属性，这无疑在开发层面徒增了心智负担。
 
-样式方式是无法解决`Rate`和`Progress`根本性问题。
+嗯`...`样式么法解决`Rate`和`Progress`根本性问题了。
 
-我们考虑了另外一种方式，即重新定义`Rate`和`Progress`组件，但又不能破坏原组件的拓展性和唯一性，所以我们采用继承原始组件的方式，在`javascript`里做了一个中间层，帮助用户初始置空相关颜色`props`。
+重新定义`Rate`和`Progress`组件可以吗？还不能破坏原组件的拓展性和唯一性，则采用继承原始组件并在`javascript`里做了一个中间层，帮助用户初始置空相关颜色`props`。
 
 ### 全量引入
 
@@ -131,7 +132,7 @@ Vue.component(Rate.name, Darken(Rate))
 
 ### 如何持久化主题、跟随系统响应式更新主题等？
 
-[预览页](https://dongwei1125.github.io/theme-dark) 中主题切换开关`switch`添加了常见的暗黑主题功能，例如浏览器缓存永久保存用户常用主题状态、跟随操作系统预设动态切换主题风格、媒体查询式主题风格过渡等，可参考组件 [ThemeToggle](https://github.com/dongwei1125/theme-dark/tree/master/docs/components/ThemeToggle/dark)。
+[预览页](https://dongwei1125.github.io/theme-dark) 中主题切换开关`switch`添加了常见的暗黑主题功能，例如浏览器缓存永久保存用户常用主题状态、跟随操作系统预设动态切换主题风格、媒体查询式主题风格过渡等，可参考组件 [ThemeToggle](https://github.com/dongwei1125/theme-dark/tree/master/docs/components/ThemeToggle/dark) 和 [示例](https://codepen.io/dongwei1125/pen/dyExzaP)。
 
 ### 持久化首次载入暗黑模式白屏？
 

@@ -1,6 +1,6 @@
-<h1 style="color: #409eff; text-align: center; font-size: 50px">Element-theme-darkplus</h1>
+<h1 align="center">Element-theme-darkplus</h1>
 
-<p style='text-align: center'>
+<p align="center">
   <a href="https://github.com/ElemeFE/element">
     <img src="https://img.shields.io/badge/element--ui-2.15.14-blue.svg" alt="element-ui" />
   </a>
@@ -36,7 +36,7 @@ npm i element-theme-darkplus -S
 ## Import
 
 ```javascript
-// webpack
+// Webpack
 import 'element-theme-darkplus/lib/index.css';
 
 // CDN
@@ -46,6 +46,7 @@ import 'element-theme-darkplus/lib/index.css';
 ## Import on demand
 
 ```javascript
+// Webpack
 import 'element-theme-darkplus/lib/input.css';
 
 // CDN
@@ -54,7 +55,7 @@ import 'element-theme-darkplus/lib/input.css';
 
 ## Switch
 
-If you have a chalk theme, a dark theme, two themes free to switch, then this way is best for you.
+If you have a chalk theme, a dark theme, two themes free to switch, then the following is best for you.
 
 ```javascript
 import 'element-ui/lib/theme-chalk/index.css';
@@ -97,9 +98,9 @@ The progress bar component [Progress](https://github.com/ElemeFE/element/blob/ma
 
 Although the two components can pass null values to reset properties to support dark themes, for students who are not concerned about this feature, it is unclear why properties such as `text-color=""` are passed in, which undoubtedly adds mental burden at the development level.
 
-The style approach cannot solve the fundamental problem of `Rate` and `Progress`.
+Um The style cannot solve the fundamental problem of `Rate` and `Progress`.
 
-We have considered another approach, which is to redefine the `Rate` and `Progress` components, but without compromising the scalability and uniqueness of the original components. Therefore, we adopted the method of inheriting the original components and added an intermediate layer in `javascript` to help users initially empty the relevant color `props`.
+Can you redefine the `Rate` and `Progress` components? Without breaking the extensibility and uniqueness of the original component, adopted the method of inheriting the original component and make a middle layer in `javascript` to help the user initially empty the related colors `props`.
 
 ### Import
 
@@ -131,7 +132,7 @@ Vue.component(Rate.name, Darken(Rate))
 
 ### How to persist themes, update themes responsive to the system?
 
-The theme `switch` in [The preview page](https://dongwei1125.github.io/theme-dark) has added common dark theme functions, such as browser caching to permanently save the user's frequently used theme status, dynamically switching theme styles according to operating system presets, and media query style transition. You can refer to the component [ThemeToggle](https://github.com/dongwei1125/theme-dark/tree/master/docs/components/ThemeToggle/dark).
+The theme `switch` in [The preview page](https://dongwei1125.github.io/theme-dark) has added common dark theme functions, such as browser caching to permanently save the user's frequently used theme status, dynamically switching theme styles according to operating system presets, and media query style transition. You can refer to the component [ThemeToggle](https://github.com/dongwei1125/theme-dark/tree/master/docs/components/ThemeToggle/dark) or [Sample](https://codepen.io/dongwei1125/pen/dyExzaP).
 
 ### Persistent loading for the first time in dark mode with white screen?
 
