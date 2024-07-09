@@ -1,16 +1,14 @@
 <template>
-  <div class="header-search" :class="{ 'header-search--expand': isExpand }" @click.stop="toggle">
-    <i class="el-icon-search" />
-
+  <div class="fuse-search">
     <el-select
-      ref="select"
       v-model="keywords"
-      :remote-method="handleSearch"
+      placeholder="搜索"
+      size="small"
+      remote
       filterable
       default-first-option
-      remote
-      placeholder="Search"
-      @change="change"
+      :remote-method="handleSearch"
+      @change="onChange"
     >
       <el-option
         v-for="item in options"
@@ -19,15 +17,16 @@
         :value="item.value"
       />
     </el-select>
+
+    <i class="el-icon-search"></i>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HeaderSearch',
+  name: 'FuseSearch',
   data() {
     return {
-      isExpand: false,
       keywords: '',
       options: [],
       searchPool: [
@@ -255,15 +254,6 @@ export default {
       fuse: null,
     }
   },
-  watch: {
-    isExpand(value) {
-      if (value) {
-        document.body.addEventListener('click', this.close)
-      } else {
-        document.body.removeEventListener('click', this.close)
-      }
-    },
-  },
   mounted() {
     this.initTo()
     this.initFuse()
@@ -294,12 +284,11 @@ export default {
       }
     },
 
-    change(anchor) {
+    onChange(anchor) {
       this.linkTo(anchor)
 
       this.keywords = ''
       this.options = []
-      this.isExpand = false
     },
 
     linkTo(anchor) {
@@ -310,57 +299,29 @@ export default {
 
       link.click()
     },
-
-    toggle() {
-      this.isExpand = !this.isExpand
-
-      if (this.isExpand) {
-        this.$refs.select?.focus()
-      }
-    },
-
-    close() {
-      this.isExpand = false
-      this.options = []
-    },
   },
 }
 </script>
 
 <style scoped>
-.header-search {
-  display: inline-flex;
-  align-items: center;
-  padding: 0 12px;
-  cursor: pointer;
-}
-
-.el-icon-search {
-  font-size: 18px;
-  color: #409eff;
-  font-weight: bold;
-}
-
-.el-select {
-  width: 0;
-  margin-left: 4px;
-  transition: width 0.2s;
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-.header-search--expand .el-select {
-  width: 210px;
+.fuse-search {
+  position: relative;
 }
 
 .el-select >>> input {
-  padding: 0;
-  border-radius: 0;
-  border: none;
-  border-bottom: 1px solid #409eff;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
 }
 
 .el-select >>> .el-input__suffix {
   display: none;
+}
+
+.el-icon-search {
+  font-size: 18px;
+  position: absolute;
+  right: 6px;
+  top: 6px;
 }
 </style>

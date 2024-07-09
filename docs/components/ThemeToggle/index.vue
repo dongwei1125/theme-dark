@@ -1,5 +1,5 @@
 <template>
-  <div class="theme-toggle" @click.stop="switchTheme" @keydown.enter.stop="() => resolve(true)">
+  <div class="theme-toggle" @click.stop="switchTheme" @keydown.enter.stop="resolve(true)">
     <theme-switch v-model="isDark" :before-change="beforeChange" />
   </div>
 </template>
