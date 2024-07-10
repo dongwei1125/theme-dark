@@ -1,7 +1,9 @@
 <template>
   <div class="app">
     <div class="navbar">
-      <h1>Element-theme-darkplus</h1>
+      <a href="">
+        <h1>Element-theme-darkplus</h1>
+      </a>
 
       <div>
         <fuse-search class="hidden-xxs hidden-xs hidden-sm hidden-md" />
@@ -230,11 +232,14 @@ html.dark .navbar {
   background-image: radial-gradient(transparent 1px, #141414 1px);
 }
 
+.navbar > a {
+  text-decoration: none;
+}
+
 .navbar h1 {
   margin: 0;
   color: #409eff;
   font-size: 24px;
-  font-family: 'Segoe UI';
 }
 
 .navbar > div {
@@ -250,7 +255,7 @@ html.dark .navbar {
   margin: 0 12px;
 }
 
-.navbar a {
+.navbar div a {
   display: inline-block;
   height: 100%;
   margin: 0 12px;
