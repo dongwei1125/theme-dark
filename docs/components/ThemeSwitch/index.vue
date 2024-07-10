@@ -10,21 +10,21 @@
 
     <span class="theme-switch__core">
       <div class="theme-switch__action">
-        <dark v-if="checked" class="dark-icon" />
+        <dark-icon v-if="checked" />
 
-        <light v-else class="light-icon" />
+        <light-icon v-else />
       </div>
     </span>
   </div>
 </template>
 
 <script>
-import Dark from './Dark.vue'
-import Light from './Light.vue'
+import DarkIcon from './DarkIcon.vue'
+import LightIcon from './LightIcon.vue'
 
 export default {
   name: 'IconSwitch',
-  components: { Dark, Light },
+  components: { DarkIcon, LightIcon },
   model: {
     prop: 'checked',
     event: 'change',
@@ -102,6 +102,15 @@ export default {
   cursor: pointer;
 }
 
+.theme-switch__input:focus-visible + .theme-switch__core {
+  outline: 2px solid #f2f2f2;
+  outline-offset: 1px;
+}
+
+.theme-switch.checked .theme-switch__input:focus-visible + .theme-switch__core {
+  outline-color: #2c2c2c;
+}
+
 .theme-switch.checked .theme-switch__core {
   border-color: #4c4d4f;
   background-color: #2c2c2c;
@@ -121,15 +130,5 @@ export default {
 .theme-switch.checked .theme-switch__action {
   left: 100%;
   margin-left: -17px;
-}
-
-.light-icon {
-  color: #606266;
-}
-
-.dark-icon {
-  border-radius: 50%;
-  color: #cfd3dc;
-  background-color: #141414;
 }
 </style>

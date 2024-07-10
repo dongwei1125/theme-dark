@@ -62,8 +62,7 @@ $typeMap: (
     }
   }
 
-  @each $type,
-  $primaryColor in $typeMap {
+  @each $type, $primaryColor in $typeMap {
     &.el-link--#{$type} {
       color: $primaryColor;
 

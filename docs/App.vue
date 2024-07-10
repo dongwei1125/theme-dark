@@ -1,14 +1,17 @@
 <template>
   <div class="app">
     <div class="navbar">
-      <h1>Element-theme-darkplus</h1>
+      <a href="">
+        <h1>Element-theme-darkplus</h1>
+      </a>
 
       <div>
-        <header-search />
-        <theme-toggle />
-        <git-hub />
-        <gitee />
-        <npm />
+        <fuse-search class="hidden-xxs hidden-xs hidden-sm hidden-md" />
+        <theme-toggle class="hidden-xxs" />
+        <git-hub class="hidden-xxs hidden-xs hidden-sm hidden-lg hidden-xl" />
+        <gitee class="hidden-xxs hidden-xs hidden-sm hidden-lg hidden-xl" />
+        <npm class="hidden-xxs hidden-xs hidden-sm hidden-lg hidden-xl" />
+        <link-dropdown class="hidden-xxs hidden-xs hidden-md hidden-lg hidden-xxl" />
       </div>
     </div>
 
@@ -73,11 +76,12 @@
 </template>
 
 <script>
-import HeaderSearch from './components/HeaderSearch.vue'
+import FuseSearch from './components/FuseSearch.vue'
 import ThemeToggle from './components/ThemeToggle/index.vue'
 import GitHub from './components/GitHub.vue'
 import Gitee from './components/Gitee.vue'
 import Npm from './components/Npm.vue'
+import LinkDropdown from './components/LinkDropdown.vue'
 
 import AlertExample from './examples/Alert.vue'
 import AutocompleteExample from './examples/Autocomplete.vue'
@@ -138,11 +142,12 @@ import UploadExample from './examples/Upload.vue'
 export default {
   name: 'App',
   components: {
-    HeaderSearch,
+    FuseSearch,
+    ThemeToggle,
     GitHub,
     Gitee,
     Npm,
-    ThemeToggle,
+    LinkDropdown,
     AlertExample,
     AutocompleteExample,
     AvatarExample,
@@ -227,12 +232,14 @@ html.dark .navbar {
   background-image: radial-gradient(transparent 1px, #141414 1px);
 }
 
+.navbar > a {
+  text-decoration: none;
+}
+
 .navbar h1 {
   margin: 0;
   color: #409eff;
   font-size: 24px;
-  font-weight: 500;
-  font-family: 'Segoe UI';
 }
 
 .navbar > div {
@@ -240,14 +247,18 @@ html.dark .navbar {
   align-items: center;
 }
 
-.navbar .theme-toggle {
-  padding: 0 12px;
+.navbar .fuse-search {
+  margin: 0 12px;
 }
 
-.navbar a {
+.navbar .theme-toggle {
+  margin: 0 12px;
+}
+
+.navbar div a {
   display: inline-block;
   height: 100%;
-  padding: 0 12px;
+  margin: 0 12px;
   font-size: 15px;
   font-weight: bold;
   color: currentColor;
@@ -270,5 +281,59 @@ html.dark .navbar {
 
 html.dark .content >>> h2 {
   color: #cfd3dc;
+}
+</style>
+
+<style scoped>
+/* 
+  xxs <439
+  xs ≥439
+  sm ≥459
+  md ≥580
+  lg ≥673
+  xl ≥693
+  xxl ≥814
+*/
+
+@media (max-width: 438px) {
+  .hidden-xxs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 439px) and (max-width: 458px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 459px) and (max-width: 579px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 580px) and (max-width: 672px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 673px) and (max-width: 692px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+@media (min-width: 693px) and (max-width: 813px) {
+  .hidden-xl {
+    display: none !important;
+  }
+}
+
+@media (min-width: 814px) {
+  .hidden-xxl {
+    display: none !important;
+  }
 }
 </style>
