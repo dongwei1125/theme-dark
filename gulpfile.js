@@ -8,6 +8,7 @@ const rename = require('gulp-rename')
 
 const cssWrap = require('./plugins/css-wrap')
 const extractColor = require('./plugins/extract-color')
+const unicodeEscape = require('./plugins/unicode-escape')
 
 const {
   scssSrc,
@@ -23,6 +24,7 @@ const {
 function compileCss() {
   return src(scssSrc)
     .pipe(sass.sync().on('error', sass.logError))
+    .pipe(unicodeEscape())
     .pipe(autoprefixer({ cascade: false }))
     .pipe(cssWrap({ selector }))
     .pipe(cleanCss())
