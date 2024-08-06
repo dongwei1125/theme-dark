@@ -1,7 +1,5 @@
 <template>
-  <div class="theme-toggle" @click.stop="switchTheme" @keydown.enter.stop="resolve(true)">
-    <theme-switch v-model="isDark" :before-change="beforeChange" />
-  </div>
+  <theme-switch ref="switch" v-model="isDark" class="theme-toggle" :before-change="beforeChange" />
 </template>
 
 <script>
@@ -13,54 +11,43 @@ export default {
   name: 'ThemeToggle',
   components: { ThemeSwitch },
   mixins: [dark],
-  data() {
-    return {
-      resolve: null,
-      beforeChange: () =>
-        new Promise(resolve => {
-          this.resolve = resolve
-        }),
-    }
-  },
   methods: {
-    switchTheme(event) {
-      if (!document.startViewTransition) {
-        return this.resolve(true)
-      }
+    beforeChange() {
+      return new Promise(resolve => {
+        if (!document.startViewTransition) {
+          return resolve(true)
+        }
 
-      const x = event.clientX
-      const y = event.clientY
-      const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))
+        const switchElement = this.$refs.switch?.$el
+        const rect = switchElement.getBoundingClientRect()
+        const x = rect.left + rect.width / 2
+        const y = rect.top + rect.height / 2
+        const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))
 
-      const transition = document.startViewTransition(async () => {
-        this.resolve(true)
-        await this.$nextTick()
-      })
+        const transition = document.startViewTransition(async () => {
+          resolve(true)
+          await this.$nextTick()
+        })
 
-      transition.ready.then(() => {
-        const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`]
+        transition.ready.then(() => {
+          const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`]
 
-        document.documentElement.animate(
-          {
-            clipPath: this.isDark ? [...clipPath].reverse() : clipPath,
-          },
-          {
-            duration: 400,
-            easing: 'ease-in',
-            pseudoElement: this.isDark ? '::view-transition-old(root)' : '::view-transition-new(root)',
-          }
-        )
+          document.documentElement.animate(
+            {
+              clipPath: this.isDark ? [...clipPath].reverse() : clipPath,
+            },
+            {
+              duration: 400,
+              easing: 'ease-in',
+              pseudoElement: this.isDark ? '::view-transition-old(root)' : '::view-transition-new(root)',
+            }
+          )
+        })
       })
     },
   },
 }
 </script>
-
-<style scoped>
-.theme-toggle {
-  display: inline-block;
-}
-</style>
 
 <style>
 ::view-transition-new(root),
