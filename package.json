@@ -1,6 +1,6 @@
 {
   "name": "element-theme-darkplus",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Element component dark theme base on the latest version 2.15.14.",
   "main": "lib/index.css",
   "style": "lib/index.css",
@@ -10,6 +10,7 @@
     "EXAMPLE.md"
   ],
   "scripts": {
+    "dev": "live-server docs",
     "build:css": "gulp build",
     "build:scripts": "rollup -c scripts/rollup.config.js"
   },
@@ -45,6 +46,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-util": "^3.0.8",
+    "live-server": "^1.2.2",
     "prettier": "^2.8.8",
     "rollup": "^4.18.0",
     "sass": "1.32.13",
