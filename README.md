@@ -143,3 +143,9 @@ Vue.component(Rate.name, Darken(Rate))
 ```html
 <script src="https://unpkg.com/element-theme-darkplus/utils/dark-mode.js"></script>
 ```
+
+支持自定义浏览器缓存字的键名。
+
+```html
+<script src="https://unpkg.com/element-theme-darkplus/utils/dark-mode.js" storage-key="custom-theme-appearance"></script>
+```

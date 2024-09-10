@@ -143,3 +143,9 @@ The solution is very simple. Add a script to the `head` in the `html`, which rea
 ```html
 <script src="https://unpkg.com/element-theme-darkplus/utils/dark-mode.js"></script>
 ```
+
+Support custom browser cache word key name.
+
+```html
+<script src="https://unpkg.com/element-theme-darkplus/utils/dark-mode.js" storage-key="custom-theme-appearance"></script>
+```
